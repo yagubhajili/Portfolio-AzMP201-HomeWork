@@ -1,0 +1,59 @@
+1. git config-This command will set up your identity - Name and Email address
+
+2. git version-it's just to check which version of Git you are using.
+
+3. git init-This command will create a blank new repository, and then you can store your source code inside this repo.
+
+4. git clone-The git clone command will use an existing repository to copy.
+
+5. git add-The Git add command will add all the new code files or modified files into your repository.
+
+6. git commit-the Git commit will add your changes to your local repository.
+
+7. git status-This Git command is convenient to see how many files are there which need your attention.
+
+8. git branch-With the Git branch command, you can manage your branches effectively.
+
+9. git checkout-This Git command is used to switch between branches.
+
+10. git remote-Git remote command acts like a border, and If you need to connect with the outside world, you have to use the Git remote command.
+
+11. git push-Once you are connected with the remote repository (with the help of the git remote command), it's time to push your changes to that repository.
+
+12. git pull-The Git pull command downloads the content (and not the metadata) and immediately updates your local repository with the latest content. 
+
+13. git log-With the help of the Git log, you can see all the previous commits with the most recent commit appear first.
+
+14. git shortlog-This command is helpful to see who worked on what as it group author with their commits.
+
+15. git show-compared to the Git log, this command git show will show you details about a specific commit.
+
+16. git rm-It can delete tracked files from the index and the working directory.
+
+17. git merge-Git merge helps you to integrate changes from two branches into a single branch. 
+
+18. git mv-To rename a git file. It will accept two arguments, source and target file name.
+
+19. git clean-You can deal with untracked files by using the Git clean command. You can remove all the untracked files from your working directory by using this command.
+
+20. git help-There are many commands in Git, and if you need more help with any command, you can use git help at any time from the terminal. 
+
+21. git whatchanged-This command does the same thing as git log but in a raw form.
+
+22. git diff-The git diff command shows the differences between your working directory and the latest commit.
+
+23. git stash-The git stash command temporarily saves changes in your working directory that you do not want to commit yet.
+
+24. git fetch-The git fetch command retrieves updates from a remote repository but does not merge them. This allows you to review changes before merging them into your local branch.
+
+25. git stash apply-The git stash apply command applies the changes you previously stashed using git stash. This allows you to retrieve your saved changes and continue working on them.
+
+26. git reset-The git reset command allows you to undo changes in your working directory or reset your commit history. This can be useful for reverting to a previous state or removing unwanted commits.
+
+27. git blame-The git blame command shows the last modification for each line in a file, along with the commit hash, author, and date. This is helpful for identifying who made specific changes and when they were made.
+
+28. git switch-This git command provides a very simple  and clean alternative to "checkout". 
+
+29. git citool-In simple words git citool is a graphical alternative to git-commit.
+
+30. git gui-git gui is a user interface. It allows you to make changes in the git repository. 

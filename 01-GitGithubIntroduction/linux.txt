@@ -1,0 +1,43 @@
+1. Is command-The ls command is commonly used to identify the files and directories in the working directory.
+
+2. pwd command-The pwd command is mostly used to print the current working directory on your terminal.
+
+3. mkdir command-This mkdir command allows you to create fresh directories in the terminal itself.
+
+4. cd command-The cd command is used to navigate between directories.
+
+5. rmdir command-The rmdir command is used to delete permanently an empty directory.
+
+6. cp command-The cp command of Linux is equivalent to copy-paste and cut-paste in Windows. 
+
+7. mv command-The mv command is generally used for renaming the files in Linux.
+
+8. rm command-rm command in Linux is generally used to delete the files created in the directory. 
+
+9. locate command-The locate command is generally used to locate the files in the database.
+
+10. touch command-The touch command creates an empty file when put in the terminal in this format as touch <file name> 
+
+11. cat command-The cat command is the simplest command to use when you want to see the contents of a particular file.
+
+12. clear command-The clear command is a standard command to clear the terminal screen.
+
+13. grep command-The grep command is used to find a specific string in a series of outputs. For example, if you want to find a string in a file, you can use the syntax: <Any command with output> | grep “<string to find> “
+
+14.echo command-echo command in Linux is specially used to print something in the terminal
+
+15. wget command-The wget command in the Linux command line allows you to download files from the internet. It runs in the background and does not interfere with other processes.
+
+16. whoami command-The whoami command provides basic information that is extremely useful when working on multiple systems. In general, if you are working with a single computer, you will not require it as frequently as a network administrator.
+
+17. sort command-The sort command is used generally to sort the output of the file. Let’s use the command and see the output.
+
+18. cal command-The cal command is not the most famous command in the terminal but it functions to view the calendar for a particular month in the terminal. Let’s see how this works.
+
+19. df command-df command in Linux gets the details of the file system.
+
+20. wc command-wc command in Linux indicates the number of words, characters, lines, etc using a set of options. 
+
+wc -w shows the number of words
+wc -l shows the number of lines
+wc -m shows the number of characters present in a file

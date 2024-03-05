@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <form action="">
+        <label for="name">Name:</label>
+        <input type="text" maxlength="5" placeholder="Enter your name">
+        <br>
+        <label for="number">Fav number:</label>
+        <input type="number" max="30" min="6" placeholder="Enter your favorite number">
+        <br>
+        <label for="email">Email:</label>
+        <input type="email" placeholder="Enter your email">
+        <br>
+        <label for="password">Password:</label>
+        <input type="password" placeholder="Enter a password">
+        <br>
+        <label for="genders"></label> Gender:
+        <input id="male" type="radio" value="male" name="question1" checked>
+        <label for="male">Male</label>
+    
+        <input id="female" type="radio" value="female" name="question1">
+        <label for="female">Female</label>
+        <br>
+        <label for="country">Country:</label>
+        <select name="country" id="country">
+            <option value="usa">Usa</option>
+            <option value="germany">Germany</option>
+            <option value="azerbijan">Azerbaijan</option>
+        </select>
+        <br>
+        <label for="message">Message:</label>
+        <br>
+        <textarea name="comment" id="comment" cols="30" rows="10" placeholder="Type your message"></textarea>
+        <br>
+        <label for="subscribe">Subscribe to newsletter:</label>
+        <input type="checkbox">
+        <br>
+        <label for="file">Upload file</label>
+        <input type="file" multiple>
+        <br>
+        <label for="birthdate">Birthdate:</label>
+        <input type="date">
+        <br>
+        <label for="color">Favorite color:</label>
+        <input type="color">
+        <br>
+        <label for="website">Personal website:</label>
+        <input type="url" placeholder="URL of your website">
+        <br>
+        <input type="submit" value="submit">
+        <input type="reset" value="reset">
+    </form>
+</body>
+
+</html>

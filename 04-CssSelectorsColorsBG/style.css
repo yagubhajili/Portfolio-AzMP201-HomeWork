@@ -1,0 +1,125 @@
+/* herseyi secir */
+* {
+
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* bu tip elementlerin hamsini secir */
+h1 {
+    color: blue;
+}
+
+/* bu class da olan butun elementleri secir */
+.div {
+    font-style: italic;
+}
+
+/* bu id de olan butun elementleri secir */
+#header {
+    background-color: blue;
+}
+
+/* elementin icinde olan butun child elementleri secir */
+ul>li {
+    font-weight: bold;
+}
+
+/* elementin icinde olan butun elementleri secir */
+div a {
+    color: rgb(147, 12, 12);
+}
+
+/* elementden sonra gelen ilk elementi secir */
+h2+p {
+    font-weight: bold;
+}
+
+/* inputun icinde type i olanlari secir */
+
+input[type] {
+    color: red;
+}
+
+/* hrefinde verilen link olan a elementlerini secir */
+a[href="example"] {
+    color: green;
+}
+
+/* href daxilinde yazilanla basliyanlari secir */
+a[href^="ht"] {
+    text-decoration: underline;
+}
+
+/* href dacilinde verilenle qurtaranlari secir */
+a[href$="p"] {
+    background-color: chartreuse;
+}
+
+/* inputun valuesu uygun olanlari secir */
+input[value*="true"] {
+    color: burlywood;
+}
+
+/* hidden classi olmuyanlari secir */
+:not(.hidden) {
+    font-size: large;
+}
+
+/* parentin icinde olan her ilk p elementini secir */
+p:first-child {
+    font-size: larger;
+}
+
+/* parentin her bir son li elementini secir */
+li:last-child {
+    color: purple;
+}
+
+/* paretin her n-ci li elementini secir */
+li:nth-child(2n) {
+    background-color: #25a851;
+}
+
+/* hec bir childi olmuyan p elementlerini secir */
+p:empty {
+    text-decoration: line-through;
+
+}
+/* linkin ustune geldikde yaranir */
+a:hover {
+    text-decoration: overline;
+  }
+  /* linke basildiqda ise dusur */
+  a:active {
+    background-color: #24c497;
+  }
+  /* input radio ya checkbox da isarelendikde ise dusur */
+  input:checked {
+    height: 50px;
+    width: 50px;
+  }
+/* eger input type textdirse ve enabled dirsa tesir gosterir */
+  input[type=text]:enabled {
+    background: #7c105a;
+  }
+  /* eger input type textdirse ve disabled dirsa tesir edir */
+  input[type=text]:disabled {
+    background: #2786bd;
+  }
+/* visit olunmus linklere tesir gosterir */
+  a:visited {
+    color: pink;
+  }
+/* visit olunmamis linklere tesir gosterir */
+a {
+  color: rgb(105, 15, 15);
+}
+/* eger in verilen value validdirse o zaman ise dusur */
+input:valid {
+    background-color: yellow;
+  }
+
+
+

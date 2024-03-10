@@ -28,7 +28,6 @@ nav {
     width: 100%;
 
 
-
 }
 
 .containerHeader {
@@ -391,12 +390,16 @@ footer {
     padding: 80px 0;
 }
 
-
+footer{
+    display: flex;
+    justify-content: center;
+    
+}
 .DivFooter {
     display: flex;
     align-items: center;
     justify-content: space-around;
-
+    width: 1320px;
     font-style: normal;
     color: white;
     font-size: 20px;

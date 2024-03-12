@@ -1,0 +1,73 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  display: flex;
+  height: 1500px;
+  justify-content: center;
+}
+.card {
+  display: flex;
+  justify-content: end;
+  position: relative;
+  margin-top: 100px;
+  width: 500px;
+  height: 500px;
+  border: 2px solid green;
+  background-color: darksalmon;
+  z-index: -100;
+}
+
+.divs {
+  border: 1px solid black;
+  height: 40px;
+  width: 40px;
+}
+
+.DivA {
+  background-color: red;
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  z-index: -10;
+}
+
+.DivB {
+  background-color: grey;
+  opacity: 0.7;
+  position: absolute;
+  top: 30px;
+  left: 30px;
+  z-index: -5;
+}
+
+.DivC {
+  background-color: yellow;
+  position: absolute;
+  top: 50px;
+  left: 50px;
+  z-index: -8;
+}
+
+.DivD {
+  background-color: orangered;
+  top: 0;
+
+  position: sticky;
+}
+
+.DivE {
+  background-color: green;
+  position: absolute;
+  bottom: 50px;
+  right: 150px;
+}
+
+.DivF {
+  background-color: red;
+  position: fixed;
+  right: 0;
+  top: 500px;
+}

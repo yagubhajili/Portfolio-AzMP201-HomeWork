@@ -1,0 +1,129 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  text-decoration: none;
+  font-family: "Open Sans", sans-serif;
+}
+
+body header .top {
+  background-color: whitesmoke;
+  font-size: 14px;
+  color: #555555;
+  display: flex;
+  justify-content: space-between;
+}
+body header .top .location {
+  display: flex;
+  padding: 0 48px;
+}
+body header .top .location div {
+  padding: 16px 0;
+}
+body header .top .location div i {
+  color: #ab7442;
+  margin-right: 8px;
+}
+body header .top .location .left-location {
+  margin-right: 24px;
+}
+body header .top .contact {
+  display: flex;
+  padding: 0 48px;
+  align-items: center;
+}
+body header .top .contact .socialmedia {
+  text-align: center;
+  display: flex;
+  gap: 10px;
+}
+body header .top .contact .socialmedia i {
+  border: 1px solid transparent;
+  background-color: white;
+}
+body header .top .contact div {
+  padding: 16px 0;
+}
+body header .top .contact div i {
+  color: #ab7442;
+}
+body header .top .contact .left-contact {
+  margin-right: 24px;
+}
+body header .top .contact .left-contact i {
+  margin-right: 8px;
+}
+
+body header nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: sticky;
+}
+body header nav h2 {
+  color: #ab7442;
+  font-size: 32px;
+  margin-right: 16px;
+  padding: 5px 48px;
+  font-family: "Roboto", sans-serif;
+}
+body header nav div {
+  display: flex;
+}
+body header nav div ul {
+  position: relative;
+  display: flex;
+  list-style: none;
+}
+body header nav div ul a {
+  color: black;
+}
+body header nav div li {
+  margin-right: 30px;
+  padding: 25px 0;
+}
+body header nav div li i {
+  margin-left: 8px;
+}
+body header nav div li a {
+  font-size: 15px;
+  font-weight: 500;
+  color: #353535;
+}
+body header nav div li a:hover {
+  color: #ab7442;
+}
+body header nav button {
+  font-family: "Open Sans", sans-serif;
+  transition: 0.3s;
+  font-size: 16px;
+  padding: 24px 48px;
+  color: white;
+  background-color: #ab7442;
+  border: none;
+}
+body header nav button i {
+  margin-left: 10px;
+}
+body header button:hover {
+  opacity: 0.9;
+}
+body header .hamburger {
+  border: 1px solid gray;
+  display: none;
+  height: 30px;
+  width: 30px;
+  margin-right: 24px;
+}
+
+@media only screen and (max-width: 992px) {
+  body header .top {
+    display: none;
+  }
+  body header nav div {
+    display: none;
+  }
+  body header nav .hamburger {
+    display: block;
+  }
+}/*# sourceMappingURL=main.css.map */

@@ -481,6 +481,60 @@ body header .hamburger {
   outline: 5px solid #e4b487;
 }
 
+.container-team {
+  padding: 0 12px;
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+  align-items: center;
+  padding: 96px 0;
+}
+.container-team h2 {
+  color: #353535;
+  font-size: 48px;
+  margin-bottom: 48px;
+  font-family: "Roboto", sans-serif;
+  font-weight: 900;
+}
+.container-team .members {
+  margin-top: 12px;
+  flex-wrap: wrap;
+  display: flex;
+  gap: 24px;
+}
+.container-team .members .member {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  flex-direction: column;
+  border: 5px solid #f5f5f5;
+  width: 25%;
+  max-width: 300px;
+  overflow: hidden;
+}
+.container-team .members .member div {
+  padding: 24px;
+}
+.container-team .members .member div h4 {
+  color: #353535;
+  font-size: 20px;
+  font-family: "Roboto", sans-serif;
+}
+.container-team .members .member div span {
+  font-size: 14px;
+  color: #353535;
+}
+.container-team .members .member img {
+  transition: 1s;
+  width: 100%;
+}
+.container-team .members .member:hover img {
+  scale: 1.1;
+}
+
 @media only screen and (max-width: 992px) {
   body header .top {
     display: none;
@@ -545,6 +599,15 @@ body header .hamburger {
   body .container-freequote .left-image .forquote {
     width: 100%;
   }
+  body .container-team {
+    max-width: 720px !important;
+  }
+  body .container-team .members {
+    width: 100% !important;
+  }
+  body .container-team .member {
+    width: 50% !important;
+  }
 }
 @media only screen and (max-width: 768px) {
   body header .top {
@@ -594,7 +657,7 @@ body header .hamburger {
     padding: 0 12px;
   }
   body .container-choose .left-content {
-    width: 516px;
+    max-width: 540px !important;
   }
   body .container-freequote {
     align-items: center;
@@ -611,6 +674,15 @@ body header .hamburger {
     padding: 0 12px;
   }
   body .container-freequote .left-image .forquote {
-    width: 516px;
+    max-width: 540px !important;
+  }
+  body .container-team {
+    max-width: 540px !important;
+  }
+  body .container-team .members {
+    width: 100% !important;
+  }
+  body .container-team .member {
+    width: 100% !important;
   }
 }/*# sourceMappingURL=main.css.map */

@@ -569,11 +569,39 @@ footer {
   color: white;
   background: linear-gradient(rgba(53, 53, 53, 0.7), rgba(53, 53, 53, 0.7)),
     url(../../photos/footer.jpg) center center no-repeat;
+  background-size: cover;
   .container-footer {
     max-width: 1140px;
     .general {
       display: grid;
       grid-template-columns: 1fr 1fr 1fr 1fr;
+      margin-bottom: 48px;
+      .forspan {
+        p {
+          margin-bottom: 16px;
+        }
+        .forabsolute {
+          position: relative;
+          input {
+            width: 100%;
+            font-size: 18px;
+            padding: 16px 48px 16px 24px;
+          }
+          button {
+            background-color: #ab7442;
+            color: white;
+            border: none;
+            padding: 8px 12px;
+
+            position: absolute;
+            top: 15px;
+            right: 15px;
+          }
+          button:hover {
+            opacity: 0.9;
+          }
+        }
+      }
       .fa-chevron-right {
         margin-right: 10px;
       }
@@ -600,6 +628,11 @@ footer {
 
           a {
             color: #f5f5f5;
+            transition: 0.5s;
+          }
+          a:hover {
+            scale: 1.1;
+            color: #ab7442;
           }
         }
 
@@ -618,12 +651,16 @@ footer {
             border: 1px solid white;
             display: flex;
             align-items: center;
-            text-align: center;
+            text-align: left;
             justify-content: center;
           }
         }
       }
     }
+  }
+  .rights {
+    border-top: 1px solid rgba(256, 256, 256, 0.1);
+    padding: 25px 0;
   }
 }
 
@@ -708,6 +745,11 @@ footer {
 
       .member {
         width: 50% !important;
+      }
+    }
+    footer {
+      .general {
+        grid-template-columns: 1fr 1fr !important;
       }
     }
   }
@@ -798,6 +840,11 @@ footer {
 
       .member {
         width: 100% !important;
+      }
+    }
+    footer {
+      .general {
+        grid-template-columns: 1fr !important;
       }
     }
   }

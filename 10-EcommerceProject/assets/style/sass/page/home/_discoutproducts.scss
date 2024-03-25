@@ -1,0 +1,344 @@
+#discoutproducts {
+    min-height: 70vh;
+    width: 100%;
+    gap: 32px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 96px;
+
+    .container {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+
+        .basliq {
+            display: flex;
+
+            justify-content: space-between;
+            width: 57%;
+
+
+            h2 {
+                font-family: "Rubik", sans-serif;
+                font-size: 32px;
+                line-height: 54.4px;
+                font-weight: 500px;
+            }
+
+            .view {
+                padding-top: 10px;
+            }
+        }
+    }
+
+    .cards {
+        display: flex;
+        gap: 24px;
+
+        .otuz {
+            height: 32px;
+            width: 79px;
+            background-color: #DF4244;
+            border-radius: 5px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: absolute;
+            left: 16px;
+            top: 16px;
+            color: white;
+        }
+
+        .card {
+            height: 508px;
+            width: 350px;
+            background-color: #F9F9F9;
+            border-radius: 5px;
+            position: relative;
+
+           
+
+            .left {
+                position: absolute;
+                top: 200px;
+                left: -69px;
+            }
+
+            .right {
+                position: absolute;
+                top: 200px;
+                right: -69px;
+            }
+
+            .new {
+                height: 32px;
+                width: 79px;
+                background-color: #43D167;
+                border-radius: 5px;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                position: absolute;
+                left: 16px;
+                top: 16px;
+                color: white;
+
+            }
+
+            .heart {
+                position: absolute;
+                right: 16px;
+                top: 16px;
+            }
+
+            .photo2 {
+                padding-top: 70px;
+                padding-bottom: 28px;
+            }
+
+            .photo3 {
+                padding-top: 22px;
+            }
+
+            .image {
+                display: flex;
+                width: 330px;
+                justify-content: center;
+
+            }
+
+            .undercard {
+                display: flex;
+                flex-direction: column;
+                gap: 20px;
+                padding: 24px;
+
+                .stars {
+                    img {
+                        width: 20px;
+                        height: 20px;
+                    }
+                }
+
+                .price {
+                    display: flex;
+                    gap: 18px;
+                    font-family: "Poppins", sans-serif;
+
+                    .red {
+                        color: #F75145;
+                        font-size: 20px;
+                        font-weight: 600;
+                        line-height: 34px;
+                    }
+
+                    .gray {
+                        font-weight: 400;
+                        line-height: 27.2px;
+                        color: #363636cb;
+                        padding-top: 3px;
+
+                    }
+
+                }
+
+                .buton {
+                    font-family: "Poppins", sans-serif;
+                    height: 48px;
+                    width: 312px;
+                    border: solid black 1px;
+                    border-radius: 3px;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    font-weight: 500px;
+                    line-height: 27.2px;
+                }
+            }
+        }
+    }
+
+}
+@media only screen and (max-width: 1255px) {
+    #discoutproducts {
+        .left{
+            display: none;
+        }
+        .right{
+            display: none;
+        }
+        margin-top: 100px;
+
+        .cards {
+            flex-direction: column;
+        }
+    }
+
+}
+@media only screen and (max-width: 500px){
+    #discoutproducts {
+        min-height: 70vh;
+        width: 100%;
+        gap: 32px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        margin-bottom: 96px;
+    
+        .container {
+            width: 100%;
+            display: flex;
+            justify-content: center;
+    
+            .basliq {
+                display: flex;
+    
+                justify-content: space-between;
+                width: 100%;
+    
+    
+                h2 {
+                    font-family: "Rubik", sans-serif;
+                    font-size: 32px;
+                    line-height: 54.4px;
+                    font-weight: 500px;
+                }
+    
+                .view {
+                    padding-top: 10px;
+                }
+            }
+        }
+    
+        .cards {
+            display: flex;
+            gap: 24px;
+    
+            .otuz {
+                height: 32px;
+                width: 79px;
+                background-color: #DF4244;
+                border-radius: 5px;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                position: absolute;
+                left: 16px;
+                top: 16px;
+                color: white;
+            }
+    
+            .card {
+                height: 508px;
+                width: 350px;
+                background-color: #F9F9F9;
+                border-radius: 5px;
+                position: relative;
+    
+               
+    
+                .left {
+                    position: absolute;
+                    top: 200px;
+                    left: -69px;
+                }
+    
+                .right {
+                    position: absolute;
+                    top: 200px;
+                    right: -69px;
+                }
+    
+                .new {
+                    height: 32px;
+                    width: 79px;
+                    background-color: #43D167;
+                    border-radius: 5px;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    position: absolute;
+                    left: 16px;
+                    top: 16px;
+                    color: white;
+    
+                }
+    
+                .heart {
+                    position: absolute;
+                    right: 16px;
+                    top: 16px;
+                }
+    
+                .photo2 {
+                    padding-top: 70px;
+                    padding-bottom: 28px;
+                }
+    
+                .photo3 {
+                    padding-top: 22px;
+                }
+    
+                .image {
+                    display: flex;
+                    width: 330px;
+                    justify-content: center;
+    
+                }
+    
+                .undercard {
+                    display: flex;
+                    flex-direction: column;
+                    gap: 20px;
+                    padding: 24px;
+    
+                    .stars {
+                        img {
+                            width: 20px;
+                            height: 20px;
+                        }
+                    }
+    
+                    .price {
+                        display: flex;
+                        gap: 18px;
+                        font-family: "Poppins", sans-serif;
+    
+                        .red {
+                            color: #F75145;
+                            font-size: 20px;
+                            font-weight: 600;
+                            line-height: 34px;
+                        }
+    
+                        .gray {
+                            font-weight: 400;
+                            line-height: 27.2px;
+                            color: #363636cb;
+                            padding-top: 3px;
+    
+                        }
+    
+                    }
+    
+                    .buton {
+                        font-family: "Poppins", sans-serif;
+                        height: 48px;
+                        width: 312px;
+                        border: solid black 1px;
+                        border-radius: 3px;
+                        display: flex;
+                        align-items: center;
+                        justify-content: center;
+                        font-weight: 500px;
+                        line-height: 27.2px;
+                    }
+                }
+            }
+        }
+    
+    }
+}

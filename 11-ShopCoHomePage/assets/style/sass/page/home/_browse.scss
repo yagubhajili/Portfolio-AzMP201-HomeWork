@@ -1,0 +1,81 @@
+#browse-section {
+  .container-browse {
+    max-width: 1272px;
+    padding: 0 16px;
+    margin: auto;
+    background-color: #f0f0f0;
+    .browse-all {
+      padding: 70px 64px;
+
+      h2 {
+        margin-bottom: 64px;
+        font-size: 48px;
+        font-weight: 700;
+        text-align: center;
+      }
+      .styles {
+        display: grid;
+        gap: 20px;
+        grid-template-areas:
+          "casual formal formal"
+          "party party gym";
+        .casual {
+          padding: 25px 36px;
+
+          height: 289px;
+          background-image: url(/assets/images/a32d9a769caba77c08e107a9198dcd6d.png);
+          grid-area: casual;
+          background-position: center;
+          border-radius: 20px;
+        }
+        .formal {
+          padding: 25px 36px;
+
+          height: 289px;
+          background-position: center;
+          border-radius: 20px;
+
+          grid-area: formal;
+          background-image: url(/assets/images/8bdbe2c750dcc6e834bf1d98a4a73b29.png);
+        }
+        .party {
+          padding: 25px 36px;
+
+          height: 289px;
+          background-position: center;
+          border-radius: 20px;
+
+          grid-area: party;
+          background-image: url(/assets/images/82cd85a823c989c1c8631bd976e2cbfb.png);
+        }
+        .gym {
+          padding: 25px 36px;
+
+          height: 289px;
+          background-position: center;
+          border-radius: 20px;
+
+          grid-area: gym;
+          background-image: url(/assets/images/c17a220fe8bfb1126626f3ab58a761ec.png);
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 800px) {
+  .styles {
+    grid-template-areas:
+      "casual formal "
+      "party gym" !important;
+  }
+}
+@media screen and (max-width: 550px) {
+  .styles {
+    grid-template-areas:
+      "casual "
+      "formal "
+      "party "
+      "gym" !important;
+  }
+}

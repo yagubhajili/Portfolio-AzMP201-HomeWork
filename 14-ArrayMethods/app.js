@@ -296,7 +296,7 @@ function getElement(arr, n = 1) {
 
 // getElement(nums)
 
-
+//2. Write a simple JavaScript function to join all elements of the following array into a string.
 
 function joinArrayToString(arr, n) {
     return arr.join(`${n}`);
@@ -307,11 +307,94 @@ function joinArrayToString(arr, n) {
 
 
 // console.log(joinArrayToString(nums, '/'));
+
+
+
+
+
+
+//3. Write a JavaScript program(function) that accepts a string as input and swaps the case of each character. For example, if you input 'The Quick Brown Fox' the output should be 'tHE qUICK bROWN fOX'
 let text = "The Quick Brown Fox"
 
 function convert(strg) {
-    let newStrg = strg.split(" ")
+    let newStrg = ''
+    for (let i = 0; i < strg.length; i++) {
+        let char = strg[i];
+        if (char === char.toUpperCase()) {
+            newStrg += char.toLowerCase()
+
+        } else {
+            newStrg += char.toUpperCase()
+        }
+
+    }
     console.log(newStrg)
+
+}
+// console.log(convert(text))
+
+
+
+
+//4. Write a method that clears the array from all unnecessary elements, like false, undefined, empty strings, zero, null.
+
+
+
+
+
+
+
+
+
+
+//5. Write a method that returns a duplicate-free array.
+let array = ['a', 2, 'd', 2, 'a', 14, 14, 's', false]
+function removeDuplicates(arr) {
+    return arr.filter((element, index) => {
+        return arr.indexOf(element) === index;
+    });
 }
 
-convert(text)
+
+
+// console.log(removeDuplicates(array)); 
+
+
+
+
+
+
+
+//6. Write a function that compares two arrays and returns true if they are identical.
+
+
+function arraysIdentical(arr1, arr2) {
+    if (arr1.length !== arr2.length) {
+        return false;
+    }
+    for (var i = 0; i < arr1.length; i++) {
+        if (arr1[i] !== arr2[i]) {
+            return false;
+        }
+    }
+    return true;
+}
+
+// console.log(arraysIdentical([1, 2, 3, 4], [1, 2, 4]))
+
+
+
+//7. Bir string ve bir char qebul eden bir function yazın.Əgər daxil olunmuş char string-də varsa char-ın yerləşdiyi indekslərin cəmini yoxdursa -1 return etsin. Məsələn salam və 'a' daxil olunarsa output 1+3=4 olmalıdır.
+function sumIndicesOfString(str, char) {
+    let sum = 0;
+    for (let i = 0; i < str.length; i++) {
+        if (str[i] === char) {
+            sum += i;
+        }
+
+    }
+    return sum;
+}
+
+// Test the function
+console.log(sumIndicesOfString("salam", "a")); // Output: 4 (1 + 3)

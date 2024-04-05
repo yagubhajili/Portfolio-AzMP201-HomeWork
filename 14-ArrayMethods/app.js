@@ -254,6 +254,134 @@ let students = [
     },
 ]
 
+
+
+function hamisi(arr) {
+    let element;
+    for (let i = 0; i < arr.length; i++) {
+        element = arr[i]
+        console.log(element)
+
+    }
+
+}
+
+// hamisi(students)
+
+
+
+
+function adlar(arr) {
+    let element;
+    for (let i = 0; i < arr.length; i++) {
+        element = arr[i]
+        console.log("ad:" + element.name + " soya: " + element.surname)
+
+
+
+    }
+
+}
+
+adlar(students)
+
+
+
+function kesr(arr) {
+    let element;
+    for (let i = 0; i < arr.length; i++) {
+        element = arr[i]
+        if (element.fail) {
+            console.log(element.name)
+        }
+
+
+    }
+
+}
+
+// kesr(students)
+
+
+function hobby(arr) {
+    let element;
+    let x = ''
+    for (let i = 0; i < arr.length; i++) {
+        element = arr[i]
+        if (element.hobbies.length > x.length) {
+            x = element.hobbies
+
+
+        }
+
+
+    }
+    console.log("ad:" + element.name + " soya: " + element.surname + " hobbies: " + element.hobbies)
+
+}
+
+// hobby(students)
+
+
+function ortalama(arr) {
+    let element;
+    let maxPoint;
+    let maxPoint2;
+
+    let max = -Infinity;
+
+    for (let i = 0; i < arr.length; i++) {
+        element = arr[i]
+        if (element.avgPoint > max) {
+            max = element.avgPoint
+            maxPoint = element
+
+
+        }
+
+    }
+    console.log("ad:" + maxPoint.name + " soyad: " + maxPoint.surname)
+
+    console.log(max)
+
+}
+// ortalama(students)
+
+
+function parol(arr) {
+    let element;
+    let maxPoint;
+
+
+    let max = '';
+
+    for (let i = 0; i < arr.length; i++) {
+        element = arr[i]
+        if (element.loginDetail.password.length > max.length) {
+            max = element.loginDetail.password
+            maxPoint = element
+        }
+
+    }
+    console.log("ad:" + maxPoint.name + " soyad: " + maxPoint.surname)
+}
+// parol(students)
+
+
+function sevgili(arr) {
+    let element;
+    for (let i = 0; i < arr.length; i++) {
+        element = arr[i]
+        if (element.boyfriendGirlfriend) {
+            console.log(element.name + " " + element.loginDetail.username)
+        }
+
+
+    }
+
+}
+// sevgili(students)
+
 function dollar(arr) {
     let element;
     for (let i = 0; i < arr.length; i++) {
@@ -396,5 +524,5 @@ function sumIndicesOfString(str, char) {
     return sum;
 }
 
-// Test the function
-console.log(sumIndicesOfString("salam", "a")); // Output: 4 (1 + 3)
+
+console.log(sumIndicesOfString("salam", "a")); 

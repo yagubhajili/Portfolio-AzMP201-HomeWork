@@ -485,7 +485,7 @@ function removeDuplicates(arr) {
 
 
 
-// console.log(removeDuplicates(array)); 
+console.log(removeDuplicates(array));
 
 
 
@@ -513,16 +513,28 @@ function arraysIdentical(arr1, arr2) {
 
 
 //7. Bir string ve bir char qebul eden bir function yazın.Əgər daxil olunmuş char string-də varsa char-ın yerləşdiyi indekslərin cəmini yoxdursa -1 return etsin. Məsələn salam və 'a' daxil olunarsa output 1+3=4 olmalıdır.
-function sumIndicesOfString(str, char) {
+function herfler(str, char) {
     let sum = 0;
     for (let i = 0; i < str.length; i++) {
         if (str[i] === char) {
-            sum += i;
+            sum = sum + i;
         }
 
     }
     return sum;
 }
 
+//9
+console.log(herfler("salam", "a"));
 
-console.log(sumIndicesOfString("salam", "a")); 
+function iki(arr1, arr2, char) {
+
+    arr1.push(...arr2)
+    console.log(arr1)
+    return arr1.join(char)
+}
+
+let num1 = [1, 2]
+let num2 = [3, 4]
+
+console.log(iki(num1, num2, "*"))

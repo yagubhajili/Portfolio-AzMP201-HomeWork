@@ -524,17 +524,4 @@ function herfler(str, char) {
     return sum;
 }
 
-//9
 console.log(herfler("salam", "a"));
-
-function iki(arr1, arr2, char) {
-
-    arr1.push(...arr2)
-    console.log(arr1)
-    return arr1.join(char)
-}
-
-let num1 = [1, 2]
-let num2 = [3, 4]
-
-console.log(iki(num1, num2, "*"))

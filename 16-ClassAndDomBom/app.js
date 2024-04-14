@@ -66,3 +66,7 @@ let user2 = new User('seyhun', 'hacili', '22', 'male', 'Aze', 'seyhun.123', 'sye
 let user3 = new User('iman', 'eliyev', 20, 'male', 'talish', 'imansiz', 'iman@gmail.com', false, 'i1m2i3', 'men imansiz oyun oynuyuram')
 
 let users = [user1, user2, user3]
+
+
+
+

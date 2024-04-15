@@ -1,0 +1,120 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body .container {
+  max-width: 1272px;
+  padding: 0 16px;
+  margin: auto;
+}
+body .container section {
+  text-align: center;
+}
+body .container section h1 {
+  margin: 15px;
+  font-size: 40px;
+}
+body .container section .topText {
+  margin: 15px;
+  font-size: 20px;
+}
+body .container section .holder {
+  display: flex;
+  gap: 40px;
+}
+body .container section .holder .card {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+  text-align: left;
+}
+body .container section .holder .card h3 {
+  font-size: 30px;
+}
+body .container section .holder .card p {
+  font-size: 20px;
+}
+body .container section .holder .card h4 {
+  color: orange;
+}
+body .container section .holder .card .accordion .accordionHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  transition: 350ms;
+  padding: 10px;
+}
+body .container section .holder .card .accordion .accordionHeader .plusButton {
+  background-color: transparent;
+  color: orange;
+  border: none;
+  font-size: 25px;
+}
+body .container section .holder .card .accordion .accordionHeader:hover {
+  background-color: #0077ff;
+}
+body .container section .holder .card .accordion .accordionBody {
+  padding: 20px;
+  display: none;
+}
+body .container section .holder .card .accordion.active .accordionBody {
+  display: block;
+}
+body .container #toDoSection {
+  background: linear-gradient(0deg, #d22990, #2e0fa3);
+  padding: 30px;
+  color: white;
+}
+body .container #toDoSection .formTask {
+  display: flex;
+  justify-content: center;
+}
+body .container #toDoSection .formTask .taskinput {
+  padding: 10px;
+  border-radius: 10px;
+  border: none;
+}
+body .container #toDoSection .formTask .submitBtn {
+  background-color: rgb(63, 60, 60);
+  border: none;
+  color: white;
+  padding: 5px;
+  border-radius: 10px;
+  margin-left: 20px;
+  border: none;
+  cursor: pointer;
+}
+body .container #toDoSection .taskHolder {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+body .container #toDoSection .taskHolder .taskItem {
+  border: 1px solid rgb(244, 237, 237);
+  padding: 15px;
+  margin: 10px;
+  display: flex;
+  align-items: center;
+  border-radius: 20px;
+}
+body .container #toDoSection .taskHolder .taskItem .deleteBtn {
+  background-color: hsl(0, 96%, 56%);
+  border: none;
+  color: white;
+  padding: 5px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+body .container #toDoSection .taskHolder .taskItem .editBtn {
+  background-color: hsl(0, 4%, 33%);
+  border: none;
+  color: white;
+  padding: 5px;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-left: 50px;
+  margin-right: 10px;
+}/*# sourceMappingURL=main.css.map */

@@ -85,6 +85,11 @@ body .container #toDoSection .formTask .submitBtn {
   margin-left: 20px;
   border: none;
   cursor: pointer;
+  transition: 0.5s;
+}
+body .container #toDoSection .formTask .submitBtn:hover {
+  opacity: 0.9;
+  scale: 1.1;
 }
 body .container #toDoSection .taskHolder {
   display: flex;
@@ -107,6 +112,11 @@ body .container #toDoSection .taskHolder .taskItem .deleteBtn {
   padding: 5px;
   border-radius: 5px;
   cursor: pointer;
+  transition: 0.5s;
+}
+body .container #toDoSection .taskHolder .taskItem .deleteBtn:hover {
+  opacity: 0.9;
+  scale: 1.1;
 }
 body .container #toDoSection .taskHolder .taskItem .editBtn {
   background-color: hsl(0, 4%, 33%);
@@ -117,4 +127,9 @@ body .container #toDoSection .taskHolder .taskItem .editBtn {
   cursor: pointer;
   margin-left: 50px;
   margin-right: 10px;
+  transition: 0.5s;
+}
+body .container #toDoSection .taskHolder .taskItem .editBtn:hover {
+  scale: 1.1;
+  opacity: 0.9;
 }/*# sourceMappingURL=main.css.map */

@@ -1,0 +1,6 @@
+.mainBody{
+    display: flex;
+    background-color: #1f2a48;
+    border-radius: 10px;
+    padding: 30px;
+}

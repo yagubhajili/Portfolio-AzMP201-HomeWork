@@ -1,0 +1,18 @@
+.highText {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+}
+
+.highText p {
+    color: #959baa;
+}
+
+.userName {
+    color: #0175f6;
+}
+
+.bio {
+    color: #959baa;
+    margin: 20px 0;
+}

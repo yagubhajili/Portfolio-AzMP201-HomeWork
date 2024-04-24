@@ -1,0 +1,34 @@
+.searchDiv{
+    display: flex;
+    padding: 10px 10px;
+    background-color: #1f2a48;
+    border-radius: 10px;
+    margin-bottom: 20px  !important;
+    margin-top: 20px !important;
+}
+input{
+    padding: 15px;
+    width: 90%;
+    height: 100%;
+    border: none;
+    background-color: #1f2a48;
+    color: white;
+
+}
+::placeholder{
+    color: white;
+}
+button{
+    padding: 15px;
+    border: none;
+    width: 10%;
+    height: 100%;
+    background-color: #0079fe;
+    border-radius: 10px;
+    cursor: pointer;
+    color: white;
+
+}
+input:focus{
+    outline: none;
+}

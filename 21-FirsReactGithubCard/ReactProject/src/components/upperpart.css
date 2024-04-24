@@ -1,0 +1,8 @@
+.upperDiv {
+    display: flex;
+    justify-content: space-between;
+    max-width: 800px;
+    margin: auto;
+    /* border: 1px solid white; */
+    padding: 0 15px;
+}

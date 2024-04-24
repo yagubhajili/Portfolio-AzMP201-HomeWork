@@ -1,0 +1,30 @@
+.tables {
+    background-color: #141c2f;
+    padding: 20px;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    width: 100%;
+
+}
+
+.tables table {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    width: 100%;
+}
+
+.tables table thead {
+    display: flex;
+    justify-content: space-evenly;
+    color: #676b7a;
+}
+
+.tables table tbody {
+    display: flex;
+    justify-content: space-evenly;
+    text-align: left;
+    font-size: 25px;
+    font-weight: 700;
+}

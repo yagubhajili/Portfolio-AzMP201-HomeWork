@@ -27,17 +27,25 @@ const Calculator = () => {
             <div className="button-container">
                 <button className="operator-button" onClick={() => {
                     setCount(count = Number(firstInput) + Number(secondInput))
+                    setFirst('')
+                    setSecond('')
                 }}>+</button>
                 <button className="operator-button" onClick={() => {
                     setCount(count = Number(firstInput) - Number(secondInput))
+                    setFirst('')
+                    setSecond('')
 
                 }}>-</button>
                 <button className="operator-button" onClick={() => {
                     setCount(count = Number(firstInput) * Number(secondInput))
+                    setFirst('')
+                    setSecond('')
 
                 }}>*</button>
                 <button className="operator-button" onClick={() => {
                     setCount(count = Number(firstInput) / Number(secondInput))
+                    setFirst('')
+                    setSecond('')
 
                 }}>/</button>
             </div>

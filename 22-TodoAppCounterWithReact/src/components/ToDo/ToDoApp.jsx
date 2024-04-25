@@ -10,7 +10,7 @@ const ToDoApp = () => {
         <div className='todo-container'>
             <div className='header'>
                 <input type="text"
-                placeholder='Enter your ToDo here'
+                    placeholder='Enter your ToDo here'
                     value={toDo}
                     onChange={(e) => {
                         toDoSet(e.target.value)
@@ -36,9 +36,9 @@ const ToDoApp = () => {
                             }}>Delete</button>
                             <button className="edit" onClick={() => {
                                 let newToDo = prompt("enter new text", elem.todo)
-                                const updatedToDoList = toDoText.map(todo => {
-                                    if (todo.id === elem.id) {
-                                        return { ...todo, todo: newToDo };
+                                const updatedToDoList = toDoText.map(el => {
+                                    if (el.id === elem.id) {
+                                        return { ...el, todo: newToDo };
                                     }
                                 })
                                 toDoTextSet(updatedToDoList);

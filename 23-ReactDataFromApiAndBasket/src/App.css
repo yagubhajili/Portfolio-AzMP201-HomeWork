@@ -125,8 +125,12 @@ header {
     display: flex;
     flex-direction: column;
     gap: 10px;
-    border: 1px solid black;
+    border: 1px solid rgb(187, 182, 182);
     padding: 10px 15px;
+    border-radius: 10px;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
 }
 
 .basketCartHolder {
@@ -168,5 +172,21 @@ header {
 }
 
 .deleteBtn:hover {
+    opacity: 0.7;
+}
+
+
+.deletAllBtn  {
+    padding: 8px 16px;
+    border-radius: 10px;
+    background-color: red;
+    border: none;
+    cursor: pointer;
+    transition: all 0.5s;
+    color: white;
+
+}
+
+.deletAllBtn:hover {
     opacity: 0.7;
 }

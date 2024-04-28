@@ -25,7 +25,7 @@ function App() {
 
   return (
     <>
-      <Header basketCount={basketCount} setBasketCount={setBasketCount} />
+      <Header basketCount={basketCount} setBasketCount={setBasketCount} basket={basket} setBasket={setBasket}  />
       <MainBody data={data} setData={setData} basketCount={basketCount} setBasketCount={setBasketCount} basket={basket} setBasket={setBasket} />
       <BasketPage basket={basket} setBasket={setBasket} basketCount={basketCount} setBasketCount={setBasketCount} />
     </>

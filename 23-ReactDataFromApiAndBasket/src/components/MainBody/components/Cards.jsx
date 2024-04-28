@@ -14,13 +14,22 @@ const Cards = ({ data, setData, basketCount, setBasketCount, basket, setBasket }
                         //     name: element.name,
                         //     unitPrice:element.unitPrice
                         // }
-                        if (!basket.includes(element)) {
-                            setBasket([...basket, { ...element, count: 1 }])
-                            setBasketCount(++basketCount)
-                        }
+                        // if (!basket.includes(element)) {
+                        //     setBasket([...basket, { ...element, count: 1 }])
+                        //     setBasketCount(++basketCount)
+                        // }
                         // console.log(basket)
-
-                    }}>Add To Cart</button>
+                        const existingProductIndex = basket.findIndex(item => item.id === element.id);
+                        if (existingProductIndex === -1) {
+                            setBasket([...basket, { ...element, count: 1 }]);
+                            setBasketCount([...element.count]);
+                        } else {
+                            const updatedBasket = [...basket];
+                            updatedBasket[existingProductIndex].count++;
+                            setBasket(updatedBasket);
+                        }
+                    }
+                    }>Add To Cart</button>
                     <button className='editBtn' onClick={() => {
                         let newName = prompt("edit the name of product", element.name)
                         let newPrice = prompt("edit the price of product", element.unitPrice)
@@ -32,12 +41,13 @@ const Cards = ({ data, setData, basketCount, setBasketCount, basket, setBasket }
                                 return item;
                             });
                             setData(updatedData);
+                            axios.patch(`https://northwind.vercel.app/api/products/${element.id}`, { name: newName, unitPrice: newPrice })
                         }
                     }}>Edit</button>
                     <button className='deleteBtn' onClick={async () => {
                         await axios.delete(`https://northwind.vercel.app/api/products/${element.id}`)
                         let arr = basket.filter(elem => elem.id !== element.id)
-                        setData([...arr])
+                        setData(arr)
                         // console.log(data)
                     }}>Delete</button>
 

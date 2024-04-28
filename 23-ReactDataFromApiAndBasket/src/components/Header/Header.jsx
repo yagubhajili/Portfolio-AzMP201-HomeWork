@@ -2,8 +2,8 @@ import React, { useState } from 'react'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faBasketShopping } from '@fortawesome/free-solid-svg-icons'
 
-const Header = ({ basketCount, setBasketcount }) => {
-
+const Header = ({ basket, setbasket, basketCount, setBasketcount }) => {
+    const basketCounts = basket.reduce((total, product) => total + product.count, 0);
 
     return (
         <header>
@@ -11,7 +11,7 @@ const Header = ({ basketCount, setBasketcount }) => {
                 <h1>HAJİLİ</h1>
                 <div className="icons">
                     <FontAwesomeIcon icon={faBasketShopping} />
-                    <p className='basketCounter'>{basketCount}</p>
+                    <p className='basketCounter'>{basketCounts}</p>
                 </div>
             </div>
         </header>

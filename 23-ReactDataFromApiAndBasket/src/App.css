@@ -1,0 +1,172 @@
+* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+    text-decoration: none;
+    list-style: none;
+}
+
+.container {
+    max-width: 1240px;
+    padding: 0 20px;
+    margin: auto;
+}
+
+header {
+    background-color: #64C095;
+    /* color: white; */
+    position: sticky;
+    top: 0;
+}
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    text-align: center;
+}
+
+.icons {
+    position: relative;
+}
+
+.basketCounter {
+    position: absolute;
+    right: -20px;
+    top: 0;
+    background-color: red;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    color: white;
+}
+
+.cardHodler {
+    padding: 50px 20px;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 20px;
+}
+
+.card {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    border: 1px solid black;
+    box-shadow: 0px 0px 0px grey;
+    -webkit-transition: box-shadow .6s ease-out;
+    box-shadow: .8px .9px 3px grey;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    padding: 10px 15px;
+    background-color: white;
+    border-radius: 10px;
+    flex-wrap: wrap;
+}
+
+.card:hover {
+    box-shadow: 1px 8px 20px grey;
+    -webkit-transition: box-shadow .6s ease-in;
+}
+
+.addToCartBtn {
+    padding: 8px 16px;
+    border-radius: 10px;
+    background-color: #64C095;
+    border: none;
+    cursor: pointer;
+    transition: all 0.5s;
+
+}
+
+.addToCartBtn:hover {
+    opacity: 0.7;
+}
+
+#mainBody {
+    background-color: rgba(205, 205, 205, 0.917);
+}
+
+.sorted-datas {
+    display: flex;
+    margin-top: 20px;
+
+}
+
+.sorted-datas input {
+    width: 30%;
+    padding: 10px 15px;
+    border-radius: 5px;
+    border: none;
+    font-size: 15px;
+}
+
+.sorted-datas input:focus {
+    outline: none;
+}
+
+.sorted-datas button {
+    padding: 5px 10px;
+    background-color: white;
+    border: none;
+    border-radius: 5px;
+    margin: 0 5px;
+    cursor: pointer;
+    transition: all 0.3s;
+}
+
+.sorted-datas button:hover {
+    scale: 1.1;
+
+}
+
+.basketCart {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    border: 1px solid black;
+    padding: 10px 15px;
+}
+
+.basketCartHolder {
+    margin-top: 20px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 15px;
+}
+
+.buttonDiv {
+    display: flex;
+    gap: 10px;
+}
+
+.editBtn {
+    padding: 8px 16px;
+    border-radius: 10px;
+    background-color: orange;
+
+    border: none;
+    cursor: pointer;
+    transition: all 0.5s;
+
+}
+
+.editBtn:hover {
+    opacity: 0.7;
+}
+
+
+.deleteBtn  {
+    padding: 8px 16px;
+    border-radius: 10px;
+    background-color: red;
+    border: none;
+    cursor: pointer;
+    transition: all 0.5s;
+
+}
+
+.deleteBtn:hover {
+    opacity: 0.7;
+}

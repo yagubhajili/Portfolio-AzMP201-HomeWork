@@ -1,8 +1,6 @@
 import React from 'react'
 
 const BasketCart = ({ basket, setBasket, basketCount, setBasketCount }) => {
-
-
     return (
         basket.map(product => {
             return (

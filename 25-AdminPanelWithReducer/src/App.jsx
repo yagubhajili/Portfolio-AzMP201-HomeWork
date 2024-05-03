@@ -35,7 +35,7 @@ function App() {
   useEffect(() => {
 
     getAllDataFromFakeStore(endPoints.products).then(resp => {
-      // console.log(resp)
+      console.log(resp)
       dispatch({
         type: 'setFakeStore',
         fakeStore: resp

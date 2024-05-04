@@ -87,6 +87,16 @@ const Navbar = () => {
                                 Home
                             </Link>
                         </li>
+                        <Link to='/login'>
+                            <img
+                                className="w-10 h-10 rounded-full"
+                                src="https://avatars.githubusercontent.com/u/161597487?v=4"
+                                alt="Rounded avatar"
+                            />
+
+                        </Link>
+
+
                     </ul>
                 </div>
             </div>

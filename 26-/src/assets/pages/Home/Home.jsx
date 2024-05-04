@@ -3,6 +3,7 @@ import React, { useEffect, useState } from 'react'
 import { v4 as uuidv4 } from 'uuid';
 import { FAKE_STORE_URL, endPoints } from '../../../services/api';
 import Search from './components/Search';
+import { Link } from 'react-router-dom';
 
 
 const Home = ({ fakeStore }) => {
@@ -238,20 +239,20 @@ const Home = ({ fakeStore }) => {
                                                             {product.rating?.count}
                                                         </td>
                                                         <td className="align-middle text-right text-sm font-normal px-6 py-4 whitespace-nowrap text-left">
-                                                            <a
+                                                            <Link
                                                                 href="#!"
                                                                 className="font-medium text-blue-600 hover:text-blue-700 focus:text-blue-700 active:text-blue-800 transition duration-300 ease-in-out"
                                                             >
                                                                 Edit
-                                                            </a>
+                                                            </Link>
                                                         </td>
                                                         <td className="align-middle text-right text-sm font-normal px-6 py-4 whitespace-nowrap text-left">
-                                                            <a
+                                                            <Link
                                                                 href="#!"
                                                                 className="font-medium text-blue-600 hover:text-blue-700 focus:text-blue-700 active:text-blue-800 transition duration-300 ease-in-out"
                                                             >
-                                                                Delete
-                                                            </a>
+                                                                Detail
+                                                            </Link>
                                                         </td>
                                                     </tr>
                                                 })}

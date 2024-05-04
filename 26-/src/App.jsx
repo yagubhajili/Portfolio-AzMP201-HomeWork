@@ -14,6 +14,8 @@ import { v4 as uuidv4 } from 'uuid';
 import Home from './assets/pages/Home/Home';
 import User from './assets/pages/User/User';
 import Login from './assets/pages/LoginRegister/Login';
+import Register from './assets/pages/LoginRegister/Register';
+import ForgetPassword from './assets/pages/LoginRegister/ForgetPassword';
 
 
 function App() {
@@ -70,6 +72,8 @@ function App() {
             <Route path="home" element={<Home fakeStore={fakeStore} />} />
             <Route path="user" element={<User userss={userss} />} />
             <Route path="login" element={<Login />} />
+            <Route path="register" element={<Register />} />
+            <Route path="forget" element={<ForgetPassword />} />
 
 
           </Route>

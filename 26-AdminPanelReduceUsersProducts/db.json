@@ -10,7 +10,7 @@
       "gender": "kiwi",
       "balance": "350",
       "accountDate": "2024",
-      "isAdmin": false,
+      "isAdmin": true,
       "basket": [],
       "favorites": []
     },
@@ -24,7 +24,7 @@
       "gender": "kiwi",
       "balance": "30",
       "accountDate": "2024",
-      "isAdmin": true,
+      "isAdmin": false,
       "basket": [],
       "favorites": []
     },
@@ -38,7 +38,7 @@
       "gender": "kadin",
       "balance": "1000",
       "accountDate": "2020",
-      "isAdmin": true,
+      "isAdmin": false,
       "basket": [],
       "favorites": []
     },
@@ -52,7 +52,7 @@
       "gender": "kadin",
       "balance": "1080",
       "accountDate": "2021",
-      "isAdmin": true,
+      "isAdmin": false,
       "basket": [],
       "favorites": []
     },
@@ -66,7 +66,7 @@
       "gender": "kiwi",
       "balance": "5000",
       "accountDate": "2024",
-      "isAdmin": true,
+      "isAdmin": false,
       "basket": [],
       "favorites": []
     },
@@ -80,7 +80,7 @@
       "gender": "kiwi",
       "balance": "1",
       "accountDate": "2024",
-      "isAdmin": true,
+      "isAdmin": false,
       "basket": [],
       "favorites": []
     }

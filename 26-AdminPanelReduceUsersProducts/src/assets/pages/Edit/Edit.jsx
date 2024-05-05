@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import { useLocation } from 'react-router-dom';
 import { getDataById } from '../../../services/provider';
 import { endPoints } from '../../../services/api';
@@ -8,10 +8,21 @@ const Edit = () => {
     const supplierId = location.state;
     // console.log(supplierId)
 
+    const [productToEdit, setProductToEdit] = useState({
+        companyName: '',
+        contactName: '',
+        city: '',
+        region: ''
+    });
 
-    getDataById(endPoints.products, supplierId).then(prod => {
-        console.log(prod)
-    })
+
+    useEffect(() => {
+        getDataById(endPoints.products, supplierId)
+            .then(prod => {
+                setProductToEdit(prod);
+            })
+    }, [supplierId]);
+
 
     return (
         <div>
@@ -29,6 +40,7 @@ const Edit = () => {
                         id="password"
                         className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
                         required=""
+                    // value={productToEdit.companyName}
                     />
                 </div>
                 <div className="mb-5">

@@ -31,9 +31,73 @@ const User = ({ userss }) => {
         setFilteredProducts(userss)
     }, [userss])
 
+
+
+
+    // const [selectedUser, setSelectedUser] = useState(null); // To track the user selected for editing
+    const [showModal, setShowModal] = useState(false);
+
     return (
         <>
             <SearchUser filteredProduct={filteredProduct} setFilteredProducts={setFilteredProducts} userss={userss} />
+            {showModal && (
+                <div className="fixed z-10 inset-0 overflow-y-auto">
+                    <div className="flex items-end justify-center min-h-screen pt-4 px-4 pb-20 text-center sm:block sm:p-0">
+                        <div className="fixed inset-0 transition-opacity" aria-hidden="true">
+                            <div className="absolute inset-0 bg-gray-500 opacity-75"></div>
+                        </div>
+                        <span className="hidden sm:inline-block sm:align-middle sm:h-screen" aria-hidden="true">&#8203;</span>
+                        <div className="inline-block align-bottom bg-white rounded-lg text-left overflow-hidden shadow-xl transform transition-all sm:my-8 sm:align-middle sm:max-w-lg sm:w-full">
+                            {/* Modal content */}
+                            <div className="bg-white px-4 pt-5 pb-4 sm:p-6 sm:pb-4 flex flex-col">
+                                <div className="sm:flex sm:items-start flex-col">
+                                    <div className="mb-3">
+                                        <label htmlFor="username" className="block text-sm font-medium text-gray-700">Username</label>
+                                        <input type="text" id="username" />
+                                    </div>
+                                    <div className="mb-3">
+                                        <label htmlFor="name" className="block text-sm font-medium text-gray-700">Name</label>
+                                        <input type="text" id="name" />
+                                    </div>
+                                    <div className="mb-3">
+                                        <label htmlFor="surname" className="block text-sm font-medium text-gray-700">Surname</label>
+                                        <input type="text" id="surname" />
+                                    </div>
+                                    <div className="mb-3">
+                                        <label htmlFor="password" className="block text-sm font-medium text-gray-700">Password</label>
+                                        <input type="text" id="password" />
+                                    </div>
+                                    <div className="mb-3">
+                                        <label htmlFor="email" className="block text-sm font-medium text-gray-700">Email</label>
+                                        <input type="email" id="email" />
+                                    </div>
+                                    <div className="mb-3">
+                                        <label htmlFor="gender" className="block text-sm font-medium text-gray-700">gender</label>
+                                        <input type="email" id="gender" />
+                                    </div>
+                                    <div className="mb-3">
+                                        <label htmlFor="balance" className="block text-sm font-medium text-gray-700">balance</label>
+                                        <input type="email" id="balance" />
+                                    </div>
+                                    <div className="mb-3">
+                                        <label htmlFor="accountDate" className="block text-sm font-medium text-gray-700">accountDate</label>
+                                        <input type="email" id="accountDate" />
+                                    </div>
+                                </div>
+                            </div>
+                            <div className="bg-gray-50 px-4 py-3 sm:px-6 sm:flex sm:flex-row-reverse">
+                                <button onClick={() => setShowModal(false)} type="button" className="w-full inline-flex justify-center rounded-md border border-transparent shadow-sm px-4 py-2 bg-blue-600 text-base font-medium text-white hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-red-500 sm:ml-3 sm:w-auto sm:text-sm">
+                                    save
+                                </button>
+                                <button onClick={() => setShowModal(false)} type="button" className="w-full inline-flex justify-center rounded-md border border-transparent shadow-sm px-4 py-2 bg-red-600 text-base font-medium text-white hover:bg-red-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-red-500 sm:ml-3 sm:w-auto sm:text-sm">
+                                    Close
+                                </button>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            )}
             {addNewProd && (
                 <div className="max-w-sm mx-auto ">
                     <div className="mb-5">
@@ -360,7 +424,10 @@ const User = ({ userss }) => {
                                     </span>
                                 </td>
                                 <td className="px-6 py-4 whitespace-nowrap  text-sm font-medium">
-                                    <Link path='' className="text-indigo-600 hover:text-indigo-900">
+                                    <Link onClick={() => {
+                                        setShowModal(true)
+                                        // setSelectedUser(user)
+                                    }} path='' className="text-indigo-600 hover:text-indigo-900">
                                         Edit
                                     </Link>
                                     <Link onClick={() => {

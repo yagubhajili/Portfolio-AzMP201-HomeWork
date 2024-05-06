@@ -8,7 +8,6 @@ import { FAKE_STORE_URL, endPoints } from '../../../services/api';
 
 const User = ({ userss }) => {
 
-
     const [filteredProduct, setFilteredProducts] = useState([])
     const [addNewProd, setAddNewProd] = useState(false)
     const [inputVals, setInputVals] = useState({
@@ -25,16 +24,11 @@ const User = ({ userss }) => {
         favorites: []
     })
 
-
-
     useEffect(() => {
         setFilteredProducts(userss)
     }, [userss])
 
-
-
-
-    // const [selectedUser, setSelectedUser] = useState(null); // To track the user selected for editing
+    // const [selectedUser, setSelectedUser] = useState(null); 
     const [showModal, setShowModal] = useState(false);
 
     return (

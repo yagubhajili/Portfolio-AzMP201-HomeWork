@@ -16,6 +16,7 @@ import User from './assets/pages/User/User';
 import Login from './assets/pages/LoginRegister/Login';
 import Register from './assets/pages/LoginRegister/Register';
 import ForgetPassword from './assets/pages/LoginRegister/ForgetPassword';
+import Detals from './assets/pages/Home/Details/Detals';
 
 
 function App() {
@@ -67,18 +68,22 @@ function App() {
         <Routes>
           <Route path="/" element={<Layout />}>
             <Route index element={<Admin data={data} dispatch={dispatch} />} />
-            <Route path="edit" element={<Edit />} />
-            <Route path="post" element={<Post />} />
-            <Route path="home" element={<Home fakeStore={fakeStore} />} />
-            <Route path="user" element={<User userss={userss} />} />
-            <Route path="login" element={<Login />} />
-            <Route path="register" element={<Register />} />
-            <Route path="forget" element={<ForgetPassword />} />
+            <Route path="/edit" element={<Edit />} />
+            <Route path="/post" element={<Post />} />
+            <Route path="/home" element={<Home fakeStore={fakeStore} />} />
+
+            <Route path="/home/:id" element={<Detals />} />
+
+
+            <Route path="/user" element={<User userss={userss} />} />
+            <Route path="/login" element={<Login />} />
+            <Route path="/register" element={<Register />} />
+            <Route path="/forget" element={<ForgetPassword />} />
 
 
           </Route>
         </Routes>
-      </BrowserRouter>
+      </BrowserRouter >
     </>
   )
 }

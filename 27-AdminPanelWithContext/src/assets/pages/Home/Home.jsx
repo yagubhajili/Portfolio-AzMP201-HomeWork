@@ -361,10 +361,12 @@ const Home = ({ fakeStore }) => {
                                                         </td>
                                                         <td className="align-middle text-right text-sm font-normal px-6 py-4 whitespace-nowrap text-left">
                                                             <Link
-                                                                href="#!"
+                                                                to={{ pathname: `/home/${product.id}` }}
+
                                                                 className="font-medium text-blue-600 hover:text-blue-700 focus:text-blue-700 active:text-blue-800 transition duration-300 ease-in-out"
                                                             >
                                                                 Detail
+
                                                             </Link>
                                                         </td>
                                                     </tr>
@@ -376,8 +378,8 @@ const Home = ({ fakeStore }) => {
                             </div>
                         </div>
                     </div>
-                </section>
-            </div>
+                </section >
+            </div >
         </>
     )
 }

@@ -11,29 +11,8 @@ import { useUserContext } from '../../../context/UserContext';
 
 const User = () => {
 
-    // const [filteredProduct, setFilteredProducts] = useState([])
-    // const [addNewProd, setAddNewProd] = useState(false)
-    // const [inputVals, setInputVals] = useState({
-    //     userName: '',
-    //     name: '',
-    //     surname: '',
-    //     password: '',
-    //     email: '',
-    //     gender: '',
-    //     balance: '',
-    //     accountDate: '',
-    //     isAdmin: false,
-    //     basket: [],
-    //     favorites: []
-    // })
-
-
-
-    // const [selectedUser, setSelectedUser] = useState(null);
-    // const [showModal, setShowModal] = useState(false);
     let { showModal, setShowModal } = useHomeContext()
     let { addNewProd, setAddNewProd, inputValss, setInputValss, selectedUser, setSelectedUser, filteredUsers, setFilteredUser } = useUserContext()
-
 
     return (
         <>

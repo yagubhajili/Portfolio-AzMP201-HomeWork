@@ -9,25 +9,6 @@ import { useHomeContext } from '../../../context/HomeContext';
 
 
 const Home = () => {
-    // const { fakeStore } = useAppContext()
-    // const [filteredProduct, setFilteredProducts] = useState([])
-    // const [addNewProd, setAddNewProd] = useState(false)
-    // const [showModal, setShowModal] = useState(false);
-    // const [selectedProduct, setSelectedProduct] = useState(null);
-
-    // const [inputVals, setInputVals] = useState({
-    //     image: '',
-    //     title: '',
-    //     price: '',
-    //     category: '',
-    //     rating: {
-    //         rate: '',
-    //         count: ''
-    //     }
-    // })
-    // useEffect(() => {
-    //     setFilteredProducts(fakeStore)
-    // }, [fakeStore])
 
     let { filteredProduct, setFilteredProducts, addNewProd, setAddNewProd, showModal, setShowModal, selectedProduct, setSelectedProduct, inputVals, setInputVals } = useHomeContext()
 

@@ -4,28 +4,34 @@ import { v4 as uuidv4 } from 'uuid';
 import { FAKE_STORE_URL, endPoints } from '../../../services/api';
 import Search from './components/Search';
 import { Link } from 'react-router-dom';
+import { useAppContext } from '../../../context/AppContext';
+import { useHomeContext } from '../../../context/HomeContext';
 
 
-const Home = ({ fakeStore }) => {
-    const [filteredProduct, setFilteredProducts] = useState([])
-    const [addNewProd, setAddNewProd] = useState(false)
-    const [showModal, setShowModal] = useState(false);
-    const [selectedProduct, setSelectedProduct] = useState(null);
+const Home = () => {
+    // const { fakeStore } = useAppContext()
+    // const [filteredProduct, setFilteredProducts] = useState([])
+    // const [addNewProd, setAddNewProd] = useState(false)
+    // const [showModal, setShowModal] = useState(false);
+    // const [selectedProduct, setSelectedProduct] = useState(null);
 
-    const [inputVals, setInputVals] = useState({
-        image: '',
-        title: '',
-        price: '',
-        category: '',
-        rating: {
-            rate: '',
-            count: ''
-        }
-    })
-    useEffect(() => {
-        setFilteredProducts(fakeStore)
-    }, [fakeStore])
+    // const [inputVals, setInputVals] = useState({
+    //     image: '',
+    //     title: '',
+    //     price: '',
+    //     category: '',
+    //     rating: {
+    //         rate: '',
+    //         count: ''
+    //     }
+    // })
+    // useEffect(() => {
+    //     setFilteredProducts(fakeStore)
+    // }, [fakeStore])
 
+    let { filteredProduct, setFilteredProducts, addNewProd, setAddNewProd, showModal, setShowModal, selectedProduct, setSelectedProduct, inputVals, setInputVals } = useHomeContext()
+
+    const { fakeStore } = useAppContext()
     return (
         <>
             <Search filteredProduct={filteredProduct} setFilteredProducts={setFilteredProducts} fakeStore={fakeStore} />

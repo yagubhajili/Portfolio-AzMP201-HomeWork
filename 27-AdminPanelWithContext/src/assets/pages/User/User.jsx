@@ -5,35 +5,39 @@ import SearchUser from './components/SearchUser';
 import { Link } from 'react-router-dom';
 import axios from 'axios';
 import { FAKE_STORE_URL, endPoints } from '../../../services/api';
+import { useAppContext } from '../../../context/AppContext';
+import { useHomeContext } from '../../../context/HomeContext';
+import { useUserContext } from '../../../context/UserContext';
 
-const User = ({ userss }) => {
+const User = () => {
 
-    const [filteredProduct, setFilteredProducts] = useState([])
-    const [addNewProd, setAddNewProd] = useState(false)
-    const [inputVals, setInputVals] = useState({
-        userName: '',
-        name: '',
-        surname: '',
-        password: '',
-        email: '',
-        gender: '',
-        balance: '',
-        accountDate: '',
-        isAdmin: false,
-        basket: [],
-        favorites: []
-    })
+    // const [filteredProduct, setFilteredProducts] = useState([])
+    // const [addNewProd, setAddNewProd] = useState(false)
+    // const [inputVals, setInputVals] = useState({
+    //     userName: '',
+    //     name: '',
+    //     surname: '',
+    //     password: '',
+    //     email: '',
+    //     gender: '',
+    //     balance: '',
+    //     accountDate: '',
+    //     isAdmin: false,
+    //     basket: [],
+    //     favorites: []
+    // })
 
-    useEffect(() => {
-        setFilteredProducts(userss)
-    }, [userss])
 
-    const [selectedUser, setSelectedUser] = useState(null);
-    const [showModal, setShowModal] = useState(false);
+
+    // const [selectedUser, setSelectedUser] = useState(null);
+    // const [showModal, setShowModal] = useState(false);
+    let { showModal, setShowModal } = useHomeContext()
+    let { addNewProd, setAddNewProd, inputValss, setInputValss, selectedUser, setSelectedUser, filteredUsers, setFilteredUser } = useUserContext()
+
 
     return (
         <>
-            <SearchUser filteredProduct={filteredProduct} setFilteredProducts={setFilteredProducts} userss={userss} />
+            <SearchUser />
             {showModal && (
                 <div className="fixed z-10 inset-0 overflow-y-auto">
                     <div className="flex items-end justify-center min-h-screen pt-4 px-4 pb-20 text-center sm:block sm:p-0">
@@ -138,9 +142,9 @@ const User = ({ userss }) => {
                                 id="password"
                                 className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
                                 required=""
-                                value={inputVals.userName}
+                                value={inputValss.userName}
                                 onChange={(e) => {
-                                    setInputVals({ ...inputVals, userName: e.target.value })
+                                    setInputValss({ ...inputValss, userName: e.target.value })
                                 }}
                             />
                         </div>
@@ -156,9 +160,9 @@ const User = ({ userss }) => {
                                 id="password"
                                 className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
                                 required=""
-                                value={inputVals.name}
+                                value={inputValss.name}
                                 onChange={(e) => {
-                                    setInputVals({ ...inputVals, name: e.target.value })
+                                    setInputValss({ ...inputValss, name: e.target.value })
                                 }}
                             />
                         </div>
@@ -174,9 +178,9 @@ const User = ({ userss }) => {
                                 id="password"
                                 className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
                                 required=""
-                                value={inputVals.surname}
+                                value={inputValss.surname}
                                 onChange={(e) => {
-                                    setInputVals({ ...inputVals, surname: e.target.value })
+                                    setInputValss({ ...inputValss, surname: e.target.value })
                                 }}
                             />
                         </div>
@@ -192,9 +196,9 @@ const User = ({ userss }) => {
                                 id="password"
                                 className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
                                 required=""
-                                value={inputVals.password}
+                                value={inputValss.password}
                                 onChange={(e) => {
-                                    setInputVals({ ...inputVals, password: e.target.value })
+                                    setInputValss({ ...inputValss, password: e.target.value })
                                 }}
                             />
                         </div>
@@ -210,10 +214,10 @@ const User = ({ userss }) => {
                                 id="password"
                                 className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
                                 required=""
-                                value={inputVals.email}
+                                value={inputValss.email}
                                 onChange={(e) => {
-                                    setInputVals({
-                                        ...inputVals,
+                                    setInputValss({
+                                        ...inputValss,
                                         email: e.target.value
 
                                     })
@@ -232,10 +236,10 @@ const User = ({ userss }) => {
                                 <select
                                     id="countries"
                                     className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
-                                    value={inputVals.gender}
+                                    value={inputValss.gender}
                                     onChange={(e) => {
-                                        setInputVals({
-                                            ...inputVals,
+                                        setInputValss({
+                                            ...inputValss,
                                             gender: e.target.value
                                         });
                                     }}
@@ -258,10 +262,10 @@ const User = ({ userss }) => {
                                 id="password"
                                 className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
                                 required=""
-                                value={inputVals.balance}
+                                value={inputValss.balance}
                                 onChange={(e) => {
-                                    setInputVals({
-                                        ...inputVals,
+                                    setInputValss({
+                                        ...inputValss,
                                         balance: e.target.value
 
                                     })
@@ -280,10 +284,10 @@ const User = ({ userss }) => {
                                 id="password"
                                 className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
                                 required=""
-                                value={inputVals.accountDate}
+                                value={inputValss.accountDate}
                                 onChange={(e) => {
-                                    setInputVals({
-                                        ...inputVals,
+                                    setInputValss({
+                                        ...inputValss,
                                         accountDate: e.target.value
 
                                     })
@@ -302,10 +306,10 @@ const User = ({ userss }) => {
                                 <select
                                     id="countries"
                                     className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
-                                    value={inputVals.isAdmin}
+                                    value={inputValss.isAdmin}
                                     onChange={(e) => {
-                                        setInputVals({
-                                            ...inputVals,
+                                        setInputValss({
+                                            ...inputValss,
                                             isAdmin: e.target.value
                                         });
                                     }}
@@ -318,7 +322,7 @@ const User = ({ userss }) => {
                         </div>
                         <button
                             onClick={async () => {
-                                await axios.post(FAKE_STORE_URL + endPoints.users, inputVals)
+                                await axios.post(FAKE_STORE_URL + endPoints.users, inputValss)
                                 setAddNewProd(false)
                                 // console.log(inputVals)
                             }}
@@ -407,7 +411,7 @@ const User = ({ userss }) => {
                     </tr>
                 </thead>
                 <tbody className="bg-white divide-y divide-gray-200">
-                    {filteredProduct?.map(user => {
+                    {filteredUsers.map(user => {
                         return (
                             <tr key={uuidv4()} >
                                 <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
@@ -439,14 +443,14 @@ const User = ({ userss }) => {
                                 </td>
                                 <td className="px-6 py-4 whitespace-nowrap">
                                     <span onClick={async () => {
-                                        const updatedFilteredProduct = filteredProduct.map(u => {
+                                        const updatedFilteredProduct = filteredUsers.map(u => {
                                             if (u.id === user.id) {
                                                 return { ...u, isAdmin: !u.isAdmin };
                                             }
                                             return u;
                                         });
                                         await axios.patch(`http://localhost:3000/users/${user.id}`, { ...user, isAdmin: !user.isAdmin })
-                                        setFilteredProducts(updatedFilteredProduct);
+                                        setFilteredUser(updatedFilteredProduct);
                                     }} className="cursor-pointer px-2 inline-flex text-xs leading-5 font-semibold rounded-full bg-green-100 text-green-800">
                                         {user.isAdmin ? ('Admin') : ('Not admin')}
                                     </span>
@@ -459,8 +463,8 @@ const User = ({ userss }) => {
                                         Edit
                                     </Link>
                                     <Link onClick={() => {
-                                        let arr = filteredProduct.filter(elem => elem.id !== user.id)
-                                        setFilteredProducts([...arr])
+                                        let arr = filteredUsers.filter(elem => elem.id !== user.id)
+                                        setFilteredUser([...arr])
                                         axios.delete(`http://localhost:3000/users/${user.id}`)
                                     }} className="ml-2 text-red-600 hover:text-red-900">
                                         Delete

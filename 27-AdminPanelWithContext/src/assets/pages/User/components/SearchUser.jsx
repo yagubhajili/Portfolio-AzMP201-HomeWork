@@ -1,9 +1,13 @@
 import React, { useState } from 'react'
+import { useHomeContext } from '../../../../context/HomeContext'
+import { useAppContext } from '../../../../context/AppContext'
+import { useUserContext } from '../../../../context/UserContext'
 
-const SearchUser = ({ filteredProduct, setFilteredProducts, userss }) => {
+const SearchUser = () => {
 
     const [searchValue, setSearchValue] = useState('')
-
+    const { userss } = useAppContext()
+    let { filteredUsers, setFilteredUser } = useUserContext()
 
     return (
         <div className="max-w-2xl mx-auto mt-12">
@@ -44,35 +48,34 @@ const SearchUser = ({ filteredProduct, setFilteredProducts, userss }) => {
                         const filteredArray = userss.filter(product =>
                             product.userName?.toLowerCase().includes(value)
                         );
-                        setFilteredProducts(filteredArray);
+                        setFilteredUser(filteredArray);
                     }}
                 />
             </div>
             <button onClick={() => {
-                let sortedData = [...filteredProduct].sort((a, b) => a.name.localeCompare(b.name))
-                setFilteredProducts(sortedData)
+                let sortedData = [...filteredUsers].sort((a, b) => a.name?.localeCompare(b.name))
+                setFilteredUser(sortedData)
             }} type="button" className="text-white bg-gray-800 hover:bg-gray-900 focus:outline-none focus:ring-4 focus:ring-gray-300 font-medium rounded-lg text-sm px-5 py-2.5 me-2 mb-2 dark:bg-gray-800 dark:hover:bg-gray-700 dark:focus:ring-gray-700 dark:border-gray-700">A-Z</button>
             <button onClick={() => {
-                let sortedData = [...filteredProduct].sort((a, b) => b.name.localeCompare(a.name))
-                setFilteredProducts(sortedData)
+                let sortedData = [...filteredUsers].sort((a, b) => b.name?.localeCompare(a.name))
+                setFilteredUser(sortedData)
             }} type="button" className="text-white bg-gray-800 hover:bg-gray-900 focus:outline-none focus:ring-4 focus:ring-gray-300 font-medium rounded-lg text-sm px-5 py-2.5 me-2 mb-2 dark:bg-gray-800 dark:hover:bg-gray-700 dark:focus:ring-gray-700 dark:border-gray-700">Z-A</button>
             <button onClick={() => {
                 let sortedData = userss.filter((a) => a.gender === 'kadin')
-                setFilteredProducts(sortedData)
+                setFilteredUser(sortedData)
             }} type="button" className="text-white bg-gray-800 hover:bg-gray-900 focus:outline-none focus:ring-4 focus:ring-gray-300 font-medium rounded-lg text-sm px-5 py-2.5 me-2 mb-2 dark:bg-gray-800 dark:hover:bg-gray-700 dark:focus:ring-gray-700 dark:border-gray-700">kadin</button>
             <button onClick={() => {
                 let sortedData = userss.filter((a) => a.gender === 'kiwi')
-                setFilteredProducts(sortedData)
+                setFilteredUser(sortedData)
             }} type="button" className="text-white bg-gray-800 hover:bg-gray-900 focus:outline-none focus:ring-4 focus:ring-gray-300 font-medium rounded-lg text-sm px-5 py-2.5 me-2 mb-2 dark:bg-gray-800 dark:hover:bg-gray-700 dark:focus:ring-gray-700 dark:border-gray-700">kiwi</button>
             <button onClick={() => {
                 let sortedData = userss.filter((a) => a.isAdmin === true)
-                setFilteredProducts(sortedData)
+                setFilteredUser(sortedData)
             }} type="button" className="text-white bg-gray-800 hover:bg-gray-900 focus:outline-none focus:ring-4 focus:ring-gray-300 font-medium rounded-lg text-sm px-5 py-2.5 me-2 mb-2 dark:bg-gray-800 dark:hover:bg-gray-700 dark:focus:ring-gray-700 dark:border-gray-700">Admins</button>
             <button onClick={() => {
                 let sortedData = userss.filter((a) => a.isAdmin === false)
-                setFilteredProducts(sortedData)
+                setFilteredUser(sortedData)
             }} type="button" className="text-white bg-gray-800 hover:bg-gray-900 focus:outline-none focus:ring-4 focus:ring-gray-300 font-medium rounded-lg text-sm px-5 py-2.5 me-2 mb-2 dark:bg-gray-800 dark:hover:bg-gray-700 dark:focus:ring-gray-700 dark:border-gray-700">users</button>
-
 
         </div>
     )

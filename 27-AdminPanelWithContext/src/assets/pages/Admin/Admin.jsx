@@ -1,14 +1,16 @@
-import React, { useEffect, useReducer } from 'react'
+import React, { useContext, useEffect, useReducer } from 'react'
 import reducer from '../../../reducers/reducer'
 import { deleteById, getAllData } from '../../../services/provider'
 import { endPoints } from '../../../services/api'
 import { v4 as uuidv4 } from 'uuid';
 import { useNavigate } from 'react-router-dom';
+import { useAppContext } from '../../../context/AppContext';
 
-const Admin = ({ data, dispacth }) => {
+const Admin = () => {
     const navigate = useNavigate();
 
-    
+    const { data, setData } = useAppContext()
+
     return (<div className="relative overflow-x-auto shadow-md sm:rounded-lg mt-12">
 
         <table className="w-full text-sm text-left rtl:text-right text-gray-500 dark:text-gray-400">
@@ -62,10 +64,11 @@ const Admin = ({ data, dispacth }) => {
                                     onClick={() => {
                                         deleteById(endPoints.suppliers, supplier.id)
                                         let newArr = data.filter(elem => elem.id !== supplier.id)
-                                        dispacth({
-                                            type: 'setData',
-                                            data: [...newArr]
-                                        })
+                                        setData([...newArr])
+                                        // dispacth({
+                                        //     type: 'setData',
+                                        //     data: [...newArr]
+                                        // })
                                     }}
                                 >
                                     Delete

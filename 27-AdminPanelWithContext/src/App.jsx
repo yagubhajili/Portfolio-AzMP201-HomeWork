@@ -13,6 +13,7 @@ import Detals from './assets/pages/Home/Details/Detals';
 import { AppProvider } from './context/AppContext';
 import HomeProvider from './context/HomeContext';
 import UserProvider from './context/UserContext';
+import UserDetail from './assets/pages/User/components/UserDetail';
 
 function App() {
   return (
@@ -28,6 +29,7 @@ function App() {
                 <Route path="/home" element={<Home />} />
                 <Route path="/home/:id" element={<Detals />} />
                 <Route path="/user" element={<User />} />
+                <Route path="/user/:id" element={<UserDetail />} />
                 <Route path="/login" element={<Login />} />
                 <Route path="/register" element={<Register />} />
                 <Route path="/forget" element={<ForgetPassword />} />

@@ -448,6 +448,11 @@ const User = () => {
                                     }} className="ml-2 text-red-600 hover:text-red-900">
                                         Delete
                                     </Link>
+                                    <Link
+                                        to={{ pathname: `/user/${user.id}` }}
+                                        className="ml-2 text-green-600 hover:text-red-900">
+                                        Detail
+                                    </Link>
                                 </td>
                             </tr>
                         )

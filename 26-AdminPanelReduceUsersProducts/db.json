@@ -10,7 +10,7 @@
       "gender": "kiwi",
       "balance": "350",
       "accountDate": "2024",
-      "isAdmin": true,
+      "isAdmin": false,
       "basket": [],
       "favorites": []
     },

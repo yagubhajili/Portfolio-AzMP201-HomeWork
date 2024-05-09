@@ -1,9 +1,12 @@
 import React from 'react'
+import { useSelector } from 'react-redux'
 import { Link } from 'react-router-dom'
 
 const Navbar = () => {
+    const basket = useSelector((state) => state.basket.basket)
+
     return (
-        <nav className="bg-white border-gray-200 dark:bg-gray-900">
+        <nav className="fixed top-0 right-0 left-0 z-50 bg-white border-gray-200 dark:bg-gray-900">
             <div className="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4">
                 <Link
                     to='/'
@@ -104,7 +107,9 @@ const Navbar = () => {
                             >
                                 Basket
                             </Link>
-                            <span className='text-red-600'>0</span>
+                            <span className='text-red-600'>{
+                                basket.reduce((acc, elem) => acc += elem.count, 0)
+                            }</span>
 
                         </li>
                         <li className='flex gap-2'>

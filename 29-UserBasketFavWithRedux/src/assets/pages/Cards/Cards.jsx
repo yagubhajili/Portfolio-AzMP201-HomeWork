@@ -21,35 +21,35 @@ const Cards = () => {
             >
                 {products && products.map(product => {
                     return <div key={product.id} className="w-72 bg-white shadow-md rounded-xl duration-500 hover:scale-105 hover:shadow-xl">
-                        <a href="#">
-                            <img
-                                src={product.image}
-                                alt="Product"
-                                className="h-80 w-72 object-cover rounded-t-xl"
-                            />
-                            <div className="px-4 py-3 w-72">
-                                <p className="text-lg font-bold text-black truncate block capitalize">
-                                    {product.title}
+
+                        <img
+                            src={product.image}
+                            alt="Product"
+                            className="h-80 w-72 object-cover rounded-t-xl"
+                        />
+                        <div className="px-4 py-3 w-72">
+                            <p className="text-lg font-bold text-black truncate block capitalize">
+                                {product.title}
+                            </p>
+                            <div className="flex items-center">
+                                <p className="text-lg font-semibold text-black cursor-auto my-3">
+                                    ${product.price}
                                 </p>
-                                <div className="flex items-center">
-                                    <p className="text-lg font-semibold text-black cursor-auto my-3">
-                                        ${product.price}
-                                    </p>
-                                    <div className="ml-auto flex items-center space-x-4">
-                                        <button onClick={() => {
-                                            dispatch(setBasket(product))
-                                        }} className="focus:outline-none">
-                                            <FaCartPlus className="text-blue-500 hover:text-blue-600" size={20} />
-                                        </button>
-                                        <button onClick={() => {
-                                            dispatch(setFavorites(product))
-                                        }} className="focus:outline-none">
-                                            <FaHeart className="text-red-500 hover:text-red-600" size={20} />
-                                        </button>
-                                    </div>
+                                <div className="ml-auto flex items-center space-x-4">
+                                    <button onClick={() => {
+                                        dispatch(setBasket(product))
+                                    }} className="focus:outline-none">
+                                        <FaCartPlus className="text-blue-500 hover:text-blue-600" size={20} />
+                                    </button>
+                                    <button onClick={() => {
+                                        dispatch(setFavorites(product))
+                                    }} className="focus:outline-none">
+                                        <FaHeart className="text-red-500 hover:text-red-600" size={20} />
+                                    </button>
                                 </div>
                             </div>
-                        </a>
+                        </div>
+
                     </div>
                 })}
 

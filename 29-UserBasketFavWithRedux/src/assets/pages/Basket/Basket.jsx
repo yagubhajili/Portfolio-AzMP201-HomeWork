@@ -1,8 +1,10 @@
 import React from 'react'
 import { useDispatch, useSelector } from 'react-redux'
-import { increaseCount, removeFromBasket } from '../../../redux/slicers/CardsSlicer'
+import { decreaseCount, increaseCount, removeAllFromBasket, removeFromBasket } from '../../../redux/slicers/CardsSlicer'
 
 const Basket = () => {
+
+
 
     const dispatch = useDispatch()
 
@@ -16,7 +18,9 @@ const Basket = () => {
                 <h2 className="text-xl font-semibold text-gray-900 dark:text-white sm:text-2xl">
                     Shopping Cart
                 </h2>
-
+                <button onClick={() => {
+                    dispatch(removeAllFromBasket())
+                }} type="button" class="focus:outline-none text-white bg-red-700 hover:bg-red-800 focus:ring-4 focus:ring-red-300 font-medium rounded-lg text-sm px-5 py-2.5 me-2 mb-2 dark:bg-red-600 dark:hover:bg-red-700 dark:focus:ring-red-900">Remove All</button>
                 <div className="mt-6 sm:mt-8 md:gap-6 lg:flex lg:items-start xl:gap-8">
 
                     <div className="mx-auto w-full flex-none lg:max-w-2xl xl:max-w-4xl">
@@ -43,6 +47,9 @@ const Basket = () => {
                                             <div className="flex items-center justify-between md:order-3 md:justify-end">
                                                 <div className="flex items-center">
                                                     <button
+                                                        onClick={() => {
+                                                            dispatch(decreaseCount(prod))
+                                                        }}
                                                         type="button"
                                                         id="decrement-button"
                                                         data-input-counter-decrement="counter-input"
@@ -99,7 +106,7 @@ const Basket = () => {
                                                 </div>
                                                 <div className="text-end md:order-4 md:w-32">
                                                     <p className="text-base font-bold text-gray-900 dark:text-white">
-                                                        ${prod.price}
+                                                        ${prod.price * prod.count}
                                                     </p>
                                                 </div>
                                             </div>
@@ -182,7 +189,7 @@ const Basket = () => {
                                         </dt>
                                         <dd className="text-base font-medium text-gray-900 dark:text-white">
                                             ${
-                                                basket.reduce((acc, elem) => acc += elem.price, 0)
+                                                basket.reduce((acc, elem) => acc += elem.price * elem.count, 0)
                                             }
                                         </dd>
                                     </dl>
@@ -209,7 +216,7 @@ const Basket = () => {
                                     </dt>
                                     <dd className="text-base font-bold text-gray-900 dark:text-white">
                                         ${
-                                            basket.reduce((acc, elem) => acc += elem.price, 0)
+                                            basket.reduce((acc, elem) => acc += elem.price * elem.count, 0)
                                         }
                                     </dd>
                                 </dl>

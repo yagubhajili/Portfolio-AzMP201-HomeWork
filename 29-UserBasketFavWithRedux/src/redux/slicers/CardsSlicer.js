@@ -7,13 +7,10 @@ const initialState = {
   favorites: JSON.parse(localStorage.getItem('favorites')) || []
 }
 
-
 export const getProducts = createAsyncThunk('getProducts', async () => {
-
   const products = await axios('http://localhost:3000/malzeme')
   // console.log(products)
   return products.data
-
 })
 
 export const cardsSlice = createSlice({
@@ -33,23 +30,38 @@ export const cardsSlice = createSlice({
       let elemIndex = state.favorites.findIndex(elem => elem.id === action.payload.id)
       if (elemIndex === -1) {
         state.favorites = [...state.favorites, { ...action.payload }]
+        localStorage.setItem('favorites', JSON.stringify([...state.favorites]))
+
+      } else {
+        state.favorites = state.favorites.filter(elem => elem.id !== action.payload.id)
+        localStorage.setItem('favorites', JSON.stringify([...state.favorites]))
       }
-      state.favorites = [...state.favorites, action.payload]
-      localStorage.setItem('favorites', JSON.stringify([...state.favorites]))
     },
     increaseCount: (state, action) => {
       let elemIndex = state.basket.findIndex(elem => elem.id === action.payload.id)
       state.basket[elemIndex].count++
+      localStorage.setItem('basket', JSON.stringify(state.basket));
+
+    },
+    decreaseCount: (state, action) => {
+      let elemIndex = state.basket.findIndex(elem => elem.id === action.payload.id)
+      state.basket[elemIndex].count--
+      if (action.payload.count <= 1) {
+        state.basket = state.basket.filter(elem => elem.id !== action.payload.id);
+        localStorage.setItem('basket', JSON.stringify(state.basket));
+      }
+      localStorage.setItem('basket', JSON.stringify(state.basket));
 
     },
     removeFromBasket: (state, action) => {
       state.basket = state.basket.filter(elem => elem.id !== action.payload.id);
       localStorage.setItem('basket', JSON.stringify(state.basket));
-
+    },
+    removeAllFromBasket: (state) => {
+      state.basket = []
+      localStorage.setItem('basket', JSON.stringify([]));
     },
   },
-
-
   extraReducers: (builder) => {
     builder.addCase(getProducts.fulfilled, (state, action) => {
       state.products = action.payload
@@ -57,6 +69,6 @@ export const cardsSlice = createSlice({
   }
 })
 
-export const { setBasket, setFavorites, increaseCount, removeFromBasket } = cardsSlice.actions
+export const { setBasket, setFavorites, increaseCount, removeFromBasket, decreaseCount, removeAllFromBasket } = cardsSlice.actions
 
 export default cardsSlice.reducer

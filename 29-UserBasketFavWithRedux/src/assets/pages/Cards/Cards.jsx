@@ -7,17 +7,24 @@ const Cards = () => {
 
     const dispatch = useDispatch()
     const products = useSelector((state) => state.products.products)
+    const favorites = useSelector((state) => state.favorites.favorites)
 
     useEffect(() => {
         dispatch(getProducts())
     }, [products])
 
     // console.log(products.products)
+
+
+    const isFavorite = (id) => {
+        return favorites.some((favorite) => favorite.id === id);
+    };
+
     return (
         <>
             <section
                 id="Projects"
-                className="w-fit mx-auto grid grid-cols-1 lg:grid-cols-3 md:grid-cols-2 justify-items-center justify-center gap-y-20 gap-x-14 mt-10 mb-5"
+                className="w-fit mx-auto grid grid-cols-1 lg:grid-cols-3 md:grid-cols-2 justify-items-center justify-center gap-y-20 gap-x-14 mt-20 mb-5"
             >
                 {products && products.map(product => {
                     return <div key={product.id} className="w-72 bg-white shadow-md rounded-xl duration-500 hover:scale-105 hover:shadow-xl">
@@ -44,7 +51,7 @@ const Cards = () => {
                                     <button onClick={() => {
                                         dispatch(setFavorites(product))
                                     }} className="focus:outline-none">
-                                        <FaHeart className="text-red-500 hover:text-red-600" size={20} />
+                                        <FaHeart className={`text-${isFavorite(product.id)?'red':'blue'}-500 hover:text-${isFavorite(product.id)?'red':'blue'} `} size={20} />
                                     </button>
                                 </div>
                             </div>

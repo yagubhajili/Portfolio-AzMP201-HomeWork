@@ -1,6 +1,6 @@
 import React from 'react'
 import { useDispatch, useSelector } from 'react-redux'
-import { decreaseCount, increaseCount, removeAllFromBasket, removeFromBasket } from '../../../redux/slicers/CardsSlicer'
+import { decreaseCount, increaseCount, removeAllFromBasket, removeFromBasket, setFavorites } from '../../../redux/slicers/CardsSlicer'
 
 const Basket = () => {
 
@@ -9,18 +9,23 @@ const Basket = () => {
     const dispatch = useDispatch()
 
     const basket = useSelector((state) => state.basket.basket)
-    console.log(basket)
+    const favorites = useSelector((state) => state.favorites.favorites)
+
+    const isFavorite = (id) => {
+        return favorites.some((favorite) => favorite.id === id);
+    };
+
     return (
 
 
-        <section className="bg-white py-24 antialiased dark:bg-gray-900 md:py-36">
+        <section className="bg-white py-24 antialiased dark:bg-gray-900 md:py-40">
             <div className="mx-auto max-w-screen-xl px-4 2xl:px-0">
                 <h2 className="text-xl font-semibold text-gray-900 dark:text-white sm:text-2xl">
                     Shopping Cart
                 </h2>
                 <button onClick={() => {
                     dispatch(removeAllFromBasket())
-                }} type="button" class="focus:outline-none text-white bg-red-700 hover:bg-red-800 focus:ring-4 focus:ring-red-300 font-medium rounded-lg text-sm px-5 py-2.5 me-2 mb-2 dark:bg-red-600 dark:hover:bg-red-700 dark:focus:ring-red-900">Remove All</button>
+                }} type="button" className="focus:outline-none text-white bg-red-700 hover:bg-red-800 focus:ring-4 focus:ring-red-300 font-medium rounded-lg text-sm px-5 py-2.5 me-2 mb-2 dark:bg-red-600 dark:hover:bg-red-700 dark:focus:ring-red-900">Remove All</button>
                 <div className="mt-6 sm:mt-8 md:gap-6 lg:flex lg:items-start xl:gap-8">
 
                     <div className="mx-auto w-full flex-none lg:max-w-2xl xl:max-w-4xl">
@@ -119,11 +124,17 @@ const Basket = () => {
                                                 </a>
                                                 <div className="flex items-center gap-4">
                                                     <button
+                                                        onClick={() => {
+                                                            dispatch(setFavorites(prod))
+                                                        }}
                                                         type="button"
-                                                        className="inline-flex items-center text-sm font-medium text-gray-500 hover:text-gray-900 hover:underline dark:text-gray-400 dark:hover:text-white"
+                                                        className={`inline-flex items-center text-sm font-medium ${isFavorite(prod.id)
+                                                                ? "text-red-500 hover:text-red-600"
+                                                                : "text-gray-500 hover:text-gray-900 hover:underline dark:text-gray-400 dark:hover:text-white"
+                                                            }`}
                                                     >
                                                         <svg
-                                                            className="me-1.5 h-5 w-5"
+                                                            className={`${isFavorite(prod.id) ? 'bg-red-800' : 'bg-transparent'}me1.5 h-5 w-5`}
                                                             aria-hidden="true"
                                                             xmlns="http://www.w3.org/2000/svg"
                                                             width={24}

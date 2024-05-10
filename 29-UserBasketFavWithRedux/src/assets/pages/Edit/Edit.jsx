@@ -29,7 +29,7 @@ const Edit = () => {
 
 
     return (
-        <div>
+        <div className='mt-6'>
             <h1>edit page</h1>
             <div className="max-w-sm mx-auto">
                 <div className="mb-5">

@@ -4,6 +4,7 @@ import { Link } from 'react-router-dom'
 
 const Navbar = () => {
     const basket = useSelector((state) => state.basket.basket)
+    const favorites = useSelector((state) => state.favorites.favorites)
 
     return (
         <nav className="fixed top-0 right-0 left-0 z-50 bg-white border-gray-200 dark:bg-gray-900">
@@ -120,7 +121,9 @@ const Navbar = () => {
                             >
                                 Favorites
                             </Link>
-                            <span className='text-red-600'>0</span>
+                            <span className='text-red-600'>{
+                                favorites.length
+                            }</span>
 
                         </li>
                         <Link to='/login'>

@@ -15,7 +15,7 @@ const Post = () => {
 
 
     return (
-        <div>
+        <div className='mt-10'>
 
             <div className="max-w-sm mx-auto">
             <h1>post Company</h1>

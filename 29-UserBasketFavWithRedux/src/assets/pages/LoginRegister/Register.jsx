@@ -24,7 +24,7 @@ const SignupSchema = Yup.object().shape({
 
 const Register = () => {
     return (
-        <section className="bg-gray-50 dark:bg-gray-900">
+        <section className="bg-gray-50 dark:bg-gray-900 mt-10">
             <div className=" flex flex-col items-center justify-center px-6 py-8 mx-auto lg:py-0">
                 <a
                     href="#"

@@ -10,7 +10,7 @@ const SearchUser = () => {
     let { filteredUsers, setFilteredUser } = useUserContext()
 
     return (
-        <div className="max-w-2xl mx-auto mt-12">
+        <div className="max-w-2xl mx-auto mt-20">
             <label
                 htmlFor="default-search"
                 className="mb-2 text-sm font-medium text-gray-900 sr-only dark:text-white"

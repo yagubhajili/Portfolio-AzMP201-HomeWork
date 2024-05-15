@@ -4,12 +4,12 @@ import axios from 'axios'
 const initialState = {
   products: [],
   basket: JSON.parse(localStorage.getItem('basket')) || [],
-  favorites: JSON.parse(localStorage.getItem('favorites')) || []
+  favorites: JSON.parse(localStorage.getItem('favorites')) || [],
+  isLogin: false
 }
 
 export const getProducts = createAsyncThunk('getProducts', async () => {
   const products = await axios('http://localhost:3000/malzeme')
-  // console.log(products)
   return products.data
 })
 
@@ -43,6 +43,10 @@ export const cardsSlice = createSlice({
       localStorage.setItem('basket', JSON.stringify(state.basket));
 
     },
+    setIsLogin: (state, action) => {
+      state.isLogin = action.payload
+
+    },
     decreaseCount: (state, action) => {
       let elemIndex = state.basket.findIndex(elem => elem.id === action.payload.id)
       state.basket[elemIndex].count--
@@ -69,6 +73,6 @@ export const cardsSlice = createSlice({
   }
 })
 
-export const { setBasket, setFavorites, increaseCount, removeFromBasket, decreaseCount, removeAllFromBasket } = cardsSlice.actions
+export const { setBasket, setFavorites, increaseCount, removeFromBasket, decreaseCount, removeAllFromBasket, setIsLogin } = cardsSlice.actions
 
 export default cardsSlice.reducer

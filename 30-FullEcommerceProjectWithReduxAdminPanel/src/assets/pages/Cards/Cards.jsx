@@ -13,9 +13,6 @@ const Cards = () => {
         dispatch(getProducts())
     }, [products])
 
-    // console.log(products.products)
-
-
     const isFavorite = (id) => {
         return favorites.some((favorite) => favorite.id === id);
     };
@@ -59,8 +56,6 @@ const Cards = () => {
 
                     </div>
                 })}
-
-
             </section>
         </>
     )

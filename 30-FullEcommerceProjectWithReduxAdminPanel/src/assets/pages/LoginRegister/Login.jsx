@@ -4,6 +4,8 @@ import { Formik, Form, Field, ErrorMessage } from 'formik';
 import * as Yup from 'yup';
 import { getAllDataFromFakeStore } from '../../../services/provider';
 import { endPoints } from '../../../services/api';
+import { useDispatch } from 'react-redux';
+import { setIsLogin } from '../../../redux/slicers/CardsSlicer';
 
 const Login = () => {
     const validationSchema = Yup.object().shape({
@@ -12,12 +14,13 @@ const Login = () => {
     });
 
     const navigate = useNavigate();
+    const disptach = useDispatch()
 
     return (
         <section className="bg-gray-50 dark:bg-gray-900">
             <div className="flex flex-col items-center justify-center px-6 py-8 mx-auto md:h-screen lg:py-0">
                 <Link
-                 
+
                     className="flex items-center mb-6 text-2xl font-semibold text-gray-900 dark:text-white"
                 >
                     <img
@@ -42,6 +45,7 @@ const Login = () => {
                                     let loginUser = res.find(elem => elem.email === values.email && elem.password === values.password);
                                     if (loginUser) {
                                         navigate('/');
+                                        disptach(setIsLogin(true))
                                     } else {
                                         alert('Enter a valid email or password');
                                     }

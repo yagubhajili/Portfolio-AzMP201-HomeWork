@@ -3,6 +3,7 @@ import { useSelector } from 'react-redux'
 import { Link } from 'react-router-dom'
 
 const Navbar = () => {
+
     const basket = useSelector((state) => state.basket.basket)
     const favorites = useSelector((state) => state.favorites.favorites)
 
@@ -124,7 +125,6 @@ const Navbar = () => {
                             <span className='text-red-600'>{
                                 favorites.length
                             }</span>
-
                         </li>
                         <Link to='/login'>
                             <img
@@ -132,15 +132,11 @@ const Navbar = () => {
                                 src="https://avatars.githubusercontent.com/u/161597487?v=4"
                                 alt="Rounded avatar"
                             />
-
                         </Link>
-
-
                     </ul>
                 </div>
             </div>
         </nav>
-
     )
 }
 

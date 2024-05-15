@@ -1,0 +1,88 @@
+{
+  "users": [
+    {
+      "id": "1",
+      "userName": "yagubhjli",
+      "name": "yagub",
+      "surname": "hajiloi",
+      "password": "yaqubbb",
+      "email": "yaqub@gmail.com",
+      "gender": "kiwi",
+      "accountDate": "2024",
+      "isAdmin": true,
+      "profilePicture": "https://avatars.githubusercontent.com/u/161597487?v=4",
+      "friends": [],
+      "images": []
+    },
+    {
+      "id": "2",
+      "userName": "gurban",
+      "name": "gurban",
+      "surname": "gurbanzada",
+      "password": "123",
+      "email": "mail.com",
+      "gender": "kiwi",
+      "accountDate": "2024",
+      "isAdmin": true,
+      "profilePicture": "https://avatars.githubusercontent.com/u/98018715?v=4",
+      "friends": [],
+      "images": []
+    },
+    {
+      "id": "5",
+      "userName": "minaye1212",
+      "name": "minaye",
+      "surname": "sabanov",
+      "password": "minaye1212",
+      "email": "xala@gmail.com",
+      "gender": "kadin",
+      "accountDate": "2020",
+      "isAdmin": false,
+      "profilePicture": "https://source.boomplaymusic.com/group10/M00/03/03/a8e49ca2469145b0a74543a1762038af_320_320.jpg",
+      "friends": [],
+      "images": []
+    },
+    {
+      "id": "27ef",
+      "userName": "malikabb",
+      "name": "malik",
+      "surname": "abasov",
+      "password": "malik1222",
+      "email": "abbasov@gmail",
+      "gender": "kiwi",
+      "accountDate": "2024",
+      "isAdmin": false,
+      "profilePicture": "https://avatars.githubusercontent.com/u/147069260?v=4",
+      "friends": [],
+      "images": []
+    },
+    {
+      "id": "27efsd",
+      "userName": "ilqar123",
+      "name": "ilqar",
+      "surname": "guliyev",
+      "password": "ilqarsecret",
+      "email": "ilqar@gmail",
+      "gender": "kiwi",
+      "accountDate": "2024",
+      "isAdmin": false,
+      "profilePicture": "https://avatars.githubusercontent.com/u/161597844?v=4",
+      "friends": [],
+      "images": []
+    },
+    {
+      "id": "37b9",
+      "profilePicture": "https://avatars.githubusercontent.com/u/107032485?v=4",
+      "userName": "saidsn",
+      "name": "seid",
+      "surname": "nuraliyev",
+      "password": "seid000",
+      "email": "said@gmail.com",
+      "gender": "kiwi",
+      "accountDate": "2024",
+      "isAdmin": false,
+      "basket": [],
+      "favorites": []
+    }
+  ]
+}
